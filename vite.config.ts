@@ -14,6 +14,7 @@ export default defineConfig({
       include: '**/*.tsx'
     })
   ],
+  base: '/sistema-restaurante-app/',
   resolve: {
     alias: {
       '@': resolve(__dirname, 'src')
