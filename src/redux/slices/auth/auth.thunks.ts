@@ -58,7 +58,7 @@ export const checkAuthToken = (): AppThunk => async (dispatch, getState) => {
   if (!token) return dispatch(onLogout(''));
 
   try {
-    const { data } = await restauranteApi.get<LoginResponse>('auth/auth-renew');
+    const { data } = await restauranteApi.get<LoginResponse>('auth/renew');
     localStorage.setItem('token', data.token);
     localStorage.setItem('token-init-date', String(new Date().getTime()));
     // setRestaurant(data.currentRestaurant);

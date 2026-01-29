@@ -28,7 +28,7 @@ export const login = async (loginData: IFormLogin) => {
 
 export const renewToken = async () => {
   const response =
-    await restauranteApi.get<LoginResponseDto>('/auth/auth-renew');
+    await restauranteApi.get<LoginResponseDto>('/auth/renew');
 
   return response.data;
 };
