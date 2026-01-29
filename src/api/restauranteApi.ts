@@ -5,8 +5,11 @@ import { getEnvVariables } from '../helpers';
 
 const { VITE_API_URL } = getEnvVariables();
 
+// Forzar URL absoluta del backend
+const API_URL = 'https://restaurante-backend-api.onrender.com/api';
+
 const restauranteApi = axios.create({
-  baseURL: VITE_API_URL,
+  baseURL: API_URL,
   //withCredentials: true,
   headers: {
     'Content-Type': 'application/json'
