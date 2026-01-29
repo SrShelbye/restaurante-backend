@@ -2,7 +2,7 @@
 .env
 
 # Lock files (keep only pnpm)
-package-lock.json
+# package-lock.json  # Uncommented for GitHub Actions
 yarn.lock
 
 # Logs
