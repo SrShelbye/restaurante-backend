@@ -178,67 +178,93 @@ export class SupabaseErpService {
   }
 
   async createProduct(request: CreateProductRequest): Promise<Product> {
-    // Primero calcular el costo total
-    const totalCost = await this.calculateProductCost(
-      request.recipe_ingredients
-    );
+    try {
+      // Usar el backend API para crear productos con cálculo automático
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/products`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${localStorage.getItem('token')}`
+        },
+        body: JSON.stringify(request)
+      });
 
-    // Calcular precio final
-    const marginAmount = request.base_price * (request.margin_percentage / 100);
-    const finalPrice = request.base_price + marginAmount;
+      if (!response.ok) {
+        const error = await response.json();
+        throw new Error(error.message || 'Error al crear producto');
+      }
 
-    const productData = {
-      name: request.name,
-      description: request.description,
-      category_id: request.category_id,
-      base_price: request.base_price,
-      margin_percentage: request.margin_percentage,
-      final_price: finalPrice,
-      total_cost: totalCost,
-      production_area_id: request.production_area_id,
-      is_active: true
-    };
-
-    // Crear producto
-    const { data: product, error: productError } = await supabase
-      .from('products')
-      .insert(productData)
-      .select()
-      .single();
-
-    if (productError) throw productError;
-
-    // Crear ingredientes de receta
-    const recipeIngredients = request.recipe_ingredients.map((ri) => ({
-      ...ri,
-      recipe_id: product.id
-    }));
-
-    const { error: recipeError } = await supabase
-      .from('recipe_ingredients')
-      .insert(recipeIngredients);
-
-    if (recipeError) throw recipeError;
-
-    return product;
+      const { data } = await response.json();
+      return data;
+    } catch (error) {
+      console.error('Error creating product:', error);
+      throw error;
+    }
   }
 
   async updateProduct(id: string, product: Partial<Product>): Promise<Product> {
-    const { data, error } = await supabase
-      .from('products')
-      .update({ ...product, updated_at: new Date().toISOString() })
-      .eq('id', id)
-      .select()
-      .single();
+    try {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/products/${id}`, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${localStorage.getItem('token')}`
+        },
+        body: JSON.stringify(product)
+      });
 
-    if (error) throw error;
-    return data;
+      if (!response.ok) {
+        const error = await response.json();
+        throw new Error(error.message || 'Error al actualizar producto');
+      }
+
+      const { data } = await response.json();
+      return data;
+    } catch (error) {
+      console.error('Error updating product:', error);
+      throw error;
+    }
   }
 
   async deleteProduct(id: string): Promise<void> {
-    const { error } = await supabase.from('products').delete().eq('id', id);
+    try {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/products/${id}`, {
+        method: 'DELETE',
+        headers: {
+          'Authorization': `Bearer ${localStorage.getItem('token')}`
+        }
+      });
 
-    if (error) throw error;
+      if (!response.ok) {
+        const error = await response.json();
+        throw new Error(error.message || 'Error al eliminar producto');
+      }
+    } catch (error) {
+      console.error('Error deleting product:', error);
+      throw error;
+    }
+  }
+
+  async getProductsWithCostCalculation(): Promise<Product[]> {
+    try {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/products/cost-analysis`, {
+        method: 'GET',
+        headers: {
+          'Authorization': `Bearer ${localStorage.getItem('token')}`
+        }
+      });
+
+      if (!response.ok) {
+        const error = await response.json();
+        throw new Error(error.message || 'Error al obtener análisis de costos');
+      }
+
+      const { data } = await response.json();
+      return data.analysis;
+    } catch (error) {
+      console.error('Error getting cost analysis:', error);
+      throw error;
+    }
   }
 
   // ---------- CATEGORÍAS ----------
