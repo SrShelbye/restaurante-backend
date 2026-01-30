@@ -52,6 +52,7 @@ interface DashboardPageState {
     lowMarginProducts: number;
     averageMargin: number;
   };
+  stockAlerts: any[];
 }
 
 export const ErpDashboard: React.FC = () => {
@@ -72,12 +73,45 @@ export const ErpDashboard: React.FC = () => {
       highMarginProducts: 0,
       lowMarginProducts: 0,
       averageMargin: 0
-    }
+    },
+    stockAlerts: []
   });
 
   useEffect(() => {
     loadDashboardData();
+    
+    // Set up WebSocket connection for real-time stock alerts
+    const setupWebSocket = () => {
+      // This would connect to the WebSocket server for real-time alerts
+      // For now, we'll fetch stock alerts periodically
+      const interval = setInterval(() => {
+        loadStockAlerts();
+      }, 30000); // Every 30 seconds
+      
+      return () => clearInterval(interval);
+    };
+    
+    const cleanup = setupWebSocket();
+    
+    return cleanup;
   }, []);
+
+  const loadStockAlerts = async () => {
+    try {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/stock/alerts/low-stock`, {
+        headers: {
+          'Authorization': `Bearer ${localStorage.getItem('token')}`
+        }
+      });
+      
+      if (response.ok) {
+        const { data } = await response.json();
+        setState(prev => ({ ...prev, stockAlerts: data.alerts || [] }));
+      }
+    } catch (error) {
+      console.error('Error loading stock alerts:', error);
+    }
+  };
 
   const loadDashboardData = async () => {
     setState((prev) => ({ ...prev, loading: true, error: null }));
@@ -192,10 +226,25 @@ export const ErpDashboard: React.FC = () => {
       </Typography>
 
       {/* Alertas de stock bajo */}
-      {state.stockAnalysis.lowStockItems > 0 && (
+      {(state.stockAnalysis.lowStockItems > 0 || state.stockAlerts.length > 0) && (
         <Alert severity='warning' sx={{ mb: 3 }} icon={<WarningIcon />}>
-          ¡Atención! Hay {state.stockAnalysis.lowStockItems} ingredientes con
-          stock bajo y {state.stockAnalysis.outOfStockItems} sin stock.
+          <Typography variant='body2'>
+            <strong>Alerta de Stock:</strong> Hay {state.stockAnalysis.lowStockItems} ingredientes con stock bajo y {state.stockAnalysis.outOfStockItems} sin stock.
+            {state.stockAlerts.length > 0 && (
+              <Box component='span' sx={{ ml: 1 }}>
+                ({state.stockAlerts.length} alertas recientes)
+              </Box>
+            )}
+          </Typography>
+          {state.stockAlerts.length > 0 && (
+            <Box sx={{ mt: 1 }}>
+              {state.stockAlerts.slice(0, 3).map((alert, index) => (
+                <Typography key={index} variant='caption' component='div'>
+                  • {alert.ingredientName}: {alert.currentStock} {alert.unit} ({alert.alertType === 'OUT_OF_STOCK' ? 'Sin Stock' : 'Stock Bajo'})
+                </Typography>
+              ))}
+            </Box>
+          )}
         </Alert>
       )}
 
