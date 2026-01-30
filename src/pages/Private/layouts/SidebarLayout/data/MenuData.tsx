@@ -6,57 +6,136 @@ import {
   ListAltOutlined,
   MenuBookOutlined,
   SoupKitchenOutlined,
-  Storefront
+  Storefront,
+  InventoryOutlined,
+  RestaurantMenuOutlined,
+  ShoppingCartOutlined,
+  PointOfSaleOutlined,
+  AssessmentOutlined,
+  PeopleOutline
 } from '@mui/icons-material';
 
 import Groups3OutlinedIcon from '@mui/icons-material/Groups3Outlined';
 import TableRestaurantOutlinedIcon from '@mui/icons-material/TableRestaurantOutlined';
-
 import DashboardOutlinedIcon from '@mui/icons-material/DashboardOutlined';
-
-import PeopleOutlineIcon from '@mui/icons-material/PeopleOutline';
+import Inventory2OutlinedIcon from '@mui/icons-material/Inventory2Outlined';
+import ReceiptLongOutlinedIcon from '@mui/icons-material/ReceiptLongOutlined';
+import AccountBalanceWalletOutlinedIcon from '@mui/icons-material/AccountBalanceWalletOutlined';
+import LocalOfferOutlinedIcon from '@mui/icons-material/LocalOfferOutlined';
+import KitchenOutlinedIcon from '@mui/icons-material/KitchenOutlined';
+import ShoppingBasketOutlinedIcon from '@mui/icons-material/ShoppingBasketOutlined';
+import StorefrontOutlinedIcon from '@mui/icons-material/StorefrontOutlined';
+import BarChartOutlinedIcon from '@mui/icons-material/BarChartOutlined';
+import TrendingUpOutlinedIcon from '@mui/icons-material/TrendingUpOutlined';
 
 import { ValidRoles } from '../../../Common/models/valid-roles.model';
 
-/* */
-const generalSection: MenuSection = {
-  title: '',
+const inventorySection = {
+  title: 'Inventario',
   allowedRoles: [ValidRoles.admin],
   items: [
     {
-      title: 'Dashboard',
-      icon: <DashboardOutlinedIcon fontSize='small' />,
-      to: '/reports'
+      title: 'Ingredientes',
+      icon: <Inventory2OutlinedIcon fontSize='small' />,
+      to: '/inventory/ingredients'
     },
     {
-      title: 'Restaurante',
-      icon: <Storefront fontSize='small' />,
-      to: '/restaurant',
-      label: 'Nuevo'
+      title: 'Semielaborados',
+      icon: <KitchenOutlinedIcon fontSize='small' />,
+      to: '/inventory/semifinished'
+    },
+    {
+      title: 'Reporte de Stock',
+      icon: <AssessmentOutlined fontSize='small' />,
+      to: '/inventory/stock-report'
     }
-    // {
-    //   title: "Finanzas",
-    //   icon: <AccountBalanceWallet />,
-    //   to: "/financial",
-    //   subItems: [
-    //     {
-    //       title: "Transacciones",
-    //       to: "/financial/transactions",
-    //       icon: <FiberManualRecord sx={{ fontSize: 8 }} />,
-    //     },
-    //     {
-    //       title: "Caja",
-    //       to: "/financial/cash-register/actives",
-    //       icon: <FiberManualRecord sx={{ fontSize: 8 }} />,
-    //     },
-    //     {
-    //       title: "Cuentas",
-    //       to: "/financial/accounts",
-    //       icon: <FiberManualRecord sx={{ fontSize: 8 }} />,
-    //     },
-    //
-    //   ],
-    // },
+  ]
+};
+
+const recipesSection = {
+  title: 'Recetas',
+  allowedRoles: [ValidRoles.admin],
+  items: [
+    {
+      title: 'Gestión de Recetas',
+      icon: <RestaurantMenuOutlined fontSize='small' />,
+      to: '/recipes'
+    },
+    {
+      title: 'Análisis de Costos',
+      icon: <TrendingUpOutlinedIcon fontSize='small' />,
+      to: '/recipes/cost-analysis'
+    }
+  ]
+};
+
+const purchasingSection = {
+  title: 'Compras',
+  allowedRoles: [ValidRoles.admin],
+  items: [
+    {
+      title: 'Proveedores',
+      icon: <StorefrontOutlinedIcon fontSize='small' />,
+      to: '/purchasing/suppliers'
+    },
+    {
+      title: 'Órdenes de Compra',
+      icon: <ShoppingBasketOutlinedIcon fontSize='small' />,
+      to: '/purchasing/purchases'
+    },
+    {
+      title: 'Resumen de Compras',
+      icon: <BarChartOutlinedIcon fontSize='small' />,
+      to: '/purchasing/summary'
+    }
+  ]
+};
+
+const salesSection = {
+  title: 'Ventas',
+  items: [
+    {
+      title: 'Punto de Venta',
+      icon: <PointOfSaleOutlined fontSize='small' />,
+      to: '/sales'
+    },
+    {
+      title: 'Reporte Diario',
+      icon: <AssessmentOutlined fontSize='small' />,
+      to: '/sales/daily'
+    },
+    {
+      title: 'Cierre de Caja',
+      icon: <AccountBalanceWalletOutlinedIcon fontSize='small' />,
+      to: '/sales/close-cash-register'
+    }
+  ]
+};
+
+const reportsSection = {
+  title: 'Reportes',
+  allowedRoles: [ValidRoles.admin],
+  items: [
+    {
+      title: 'Dashboard Principal',
+      icon: <DashboardOutlinedIcon fontSize='small' />,
+      to: '/reports/dashboard'
+    },
+    {
+      title: 'Valuación de Inventario',
+      icon: <InventoryOutlined fontSize='small' />,
+      to: '/reports/inventory-valuation'
+    },
+    {
+      title: 'Rentabilidad',
+      icon: <TrendingUpOutlinedIcon fontSize='small' />,
+      to: '/reports/profitability'
+    },
+    {
+      title: 'Uso de Ingredientes',
+      icon: <KitchenOutlinedIcon fontSize='small' />,
+      to: '/reports/ingredient-usage'
+    }
   ]
 };
 
@@ -122,7 +201,7 @@ const managementSection = {
     },
     {
       title: 'Gestión de usuarios',
-      icon: <PeopleOutlineIcon fontSize='small' />,
+      icon: <PeopleOutline fontSize='small' />,
       to: '/users'
     }
     // {
@@ -133,8 +212,31 @@ const managementSection = {
   ]
 };
 
+const generalSection: MenuSection = {
+  title: '',
+  allowedRoles: [ValidRoles.admin],
+  items: [
+    {
+      title: 'Dashboard',
+      icon: <DashboardOutlinedIcon fontSize='small' />,
+      to: '/reports/dashboard'
+    },
+    {
+      title: 'Restaurante',
+      icon: <Storefront fontSize='small' />,
+      to: '/restaurant',
+      label: 'Nuevo'
+    }
+  ]
+};
+
 export const menuSections: MenuSection[] = [
   generalSection,
   ordersSection,
+  inventorySection,
+  recipesSection,
+  purchasingSection,
+  salesSection,
+  reportsSection,
   managementSection
 ];
