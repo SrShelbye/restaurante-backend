@@ -74,6 +74,12 @@ export const useRenewToken = () => {
   useEffect(() => {
     const renew = async () => {
       try {
+        const token = localStorage.getItem('token');
+        if (!token) {
+          dispatch(onLogout(''));
+          return;
+        }
+
         dispatch(onChecking());
         const data = await renewToken(); // assuming this is an async call
 

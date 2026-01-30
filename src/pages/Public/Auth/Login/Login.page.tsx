@@ -16,6 +16,8 @@ import { LoadingButton } from '@mui/lab';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import { Copyright } from '@mui/icons-material';
 
+import { Link as RouterLink } from 'react-router-dom';
+
 import { useAppDispatch, useAppSelector } from '../../../../hooks';
 
 import { IFormLogin, PublicRoutes } from '../../../../models';
@@ -139,7 +141,11 @@ export const LoginPage = () => {
                     minLength: { value: 2, message: 'Contraseña no valida' }
                   })}
                 />
-                <Link href={'/' + PublicRoutes.FORGOT_PASSWORD} variant='body2'>
+                <Link
+                  component={RouterLink}
+                  to={'/' + PublicRoutes.FORGOT_PASSWORD}
+                  variant='body2'
+                >
                   Olvidé mi contraseña
                 </Link>
 
@@ -160,7 +166,7 @@ export const LoginPage = () => {
                   sx={{ my: 2 }}
                 >
                   <Typography>No tienes una cuenta?</Typography>
-                  <Link href='/auth/register' variant='body2'>
+                  <Link component={RouterLink} to='/auth/register' variant='body2'>
                     Regístrate
                   </Link>
                 </Stack>

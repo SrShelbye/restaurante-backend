@@ -9,10 +9,10 @@ export const registerUser = async ({
   if (data.numPhone === '') {
     delete data.numPhone;
   }
-  const response = await restauranteApi.post<LoginResponseDto>(
-    '/auth/register',
-    data
-  );
+  const response = await restauranteApi.post<LoginResponseDto>('/auth/register', {
+    ...data,
+    samePassword
+  });
 
   return response.data;
 };

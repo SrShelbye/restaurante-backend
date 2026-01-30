@@ -2,7 +2,7 @@ import { Suspense } from 'react';
 
 import NiceModal from '@ebay/nice-modal-react';
 
-import { BrowserRouter } from 'react-router-dom';
+import { HashRouter } from 'react-router-dom';
 
 import { CssBaseline, IconButton } from '@mui/material';
 
@@ -45,11 +45,11 @@ function App() {
             zIndex: 105500
           }}
         >
-          <BrowserRouter>
+          <HashRouter>
             <NiceModal.Provider>
               <AppRouter />
             </NiceModal.Provider>
-          </BrowserRouter>
+          </HashRouter>
         </SnackbarProvider>
       </Suspense>
     </ThemeProvider>
