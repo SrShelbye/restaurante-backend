@@ -54,7 +54,7 @@ export const AddInvoice = () => {
                     <Add />
                   </IconButton>
                 </Box>
-                <Typography variant='h5'>Santiago Quirumbay</Typography>
+                <Typography variant='h5'>Restaurante</Typography>
                 <Typography variant='h5'> Av. 1 de Mayo # 1-23</Typography>
 
                 <Typography variant='h5'> Tel: 123456789</Typography>

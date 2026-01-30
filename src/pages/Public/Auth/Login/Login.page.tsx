@@ -184,7 +184,7 @@ export const LoginPage = () => {
                     align='center'
                   >
                     <Copyright />
-                    Santiago Quirumbay
+                    Restaurante
                   </Typography>
                 </Stack>
               </Box>

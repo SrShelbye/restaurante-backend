@@ -235,7 +235,7 @@ export const Signup = () => {
           align='center'
         >
           <Copyright />
-          Santiago Quirumbay
+          Restaurante
         </Typography>
       </Stack>
     </Container>

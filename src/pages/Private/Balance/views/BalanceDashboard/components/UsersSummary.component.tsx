@@ -251,7 +251,7 @@ export const UsersSummary = () => {
             </ListItemIcon>
             <ListItemText
 
-              primary='Santiago Quirumbay'
+              primary='Restaurante'
               secondary={
 
                 <Stack spacing={1} direction='row'>
@@ -286,7 +286,7 @@ export const UsersSummary = () => {
             </ListItemIcon>
             <ListItemText
 
-              primary='Santiago Quirumbay'
+              primary='Restaurante'
               secondary={
 
                 <Stack spacing={1} direction='row'>

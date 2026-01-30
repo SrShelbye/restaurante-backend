@@ -284,8 +284,8 @@ function Sidebar() {
 
         {open && (
           <Box p={2} textAlign='center'>
-            <Typography variant='subtitle2'>Desarrollado por </Typography>
-            <Typography variant='body1'>Santiago Quirumbay</Typography>
+            <Typography variant='subtitle2'>Sistema de Gestión</Typography>
+            <Typography variant='body1'>Restaurante</Typography>
           </Box>
         )}
       </DrawerPersistent>
@@ -315,10 +315,10 @@ function Sidebar() {
           <Divider />
           <Box p={1} textAlign='center'>
             <Typography color='text.primary' variant='subtitle1'>
-              Desarrollado por{' '}
+              Sistema de Gestión{' '}
             </Typography>
             <Typography variant='body1' color='text.primary'>
-              Santiago Quirumbay
+              Restaurante
             </Typography>
           </Box>
         </SidebarWrapper>
