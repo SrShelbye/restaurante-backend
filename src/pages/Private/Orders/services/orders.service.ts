@@ -53,10 +53,10 @@ export const getActiveOrders = async (filterDto: DateFiltePaginationDto) => {
 
   const { data } = await restauranteApi.get<Order[]>(`orders/actives`, {
     params: {
-      limit: 50,
-      offset: 0,
-      startDate: new Date('01-01-2025'),
-      period: 'yearly'
+      limit,
+      offset,
+      startDate,
+      period
     }
   });
 

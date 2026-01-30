@@ -42,9 +42,14 @@ export const ListActiveOrders = () => {
 
   const filterOrdersByProductionArea = (productionArea: ProductionArea) => {
     return orders.filter((order) => {
+      // Ensure order.details exists and is an array
+      if (!order.details || !Array.isArray(order.details)) {
+        return false;
+      }
+      
       const details = productionArea
         ? order.details.filter(
-            (detail) => detail.product.productionArea.id === productionArea.id
+            (detail) => detail.product && detail.product.productionArea && detail.product.productionArea.id === productionArea.id
           )
         : order.details;
 
@@ -55,10 +60,10 @@ export const ListActiveOrders = () => {
   // const ordersFilteredByProductionArea = productionAreaActive
   //   ? filterOrdersByProductionArea(productionAreaActive)
   //   : orders;
-  const ordersFilteredByProductionArea = orders;
+  const ordersFilteredByProductionArea = Array.isArray(orders) ? orders : [];
 
   const ordersFiltered = ordersFilteredByProductionArea.filter(
-    (order) => order.status === statusOrderFilter
+    (order) => order && order.status === statusOrderFilter
   );
 
   const handleChangeArea = (_: SyntheticEvent, newValue: number) => {

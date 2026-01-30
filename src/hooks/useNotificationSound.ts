@@ -3,7 +3,7 @@ import { useRef, useCallback, useState, useEffect } from 'react';
 /* */
 export const useNotificationSound = (
   volume: number = 0.5,
-  soundUrl: string = '/static/sounds/bell-ding.wav'
+  soundUrl: string = '/sounds/bell-ding.wav'
 ) => {
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const audioContextRef = useRef<AudioContext | null>(null);
