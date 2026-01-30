@@ -15,7 +15,6 @@ const Private = lazy(() => import('../pages/Private/Private'));
 
 /**
  * @author Santiago Quirumbay
- * @version v1.1 12-04-2025 Implement useRenewToken hook
  */
 export const AppRouter = () => {
   const { status } = useAppSelector(selectAuth);
