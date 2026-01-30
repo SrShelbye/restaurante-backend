@@ -65,6 +65,75 @@ export class SupabaseErpService {
     if (error) throw error;
   }
 
+  async getIngredientUsage(id: string): Promise<any> {
+    try {
+      // Get recipes that use this ingredient
+      const { data: recipes, error: recipesError } = await supabase
+        .from('recipes')
+        .select(`
+          id,
+          name,
+          description,
+          recipe_ingredients!inner(
+            ingredient_id,
+            gross_quantity,
+            ingredients(
+              id,
+              name,
+              unit
+            )
+          )
+        `)
+        .eq('recipe_ingredients.ingredient_id', id)
+        .eq('is_active', true);
+
+      // Get semifinished products that use this ingredient
+      const { data: semifinished, error: semifinishedError } = await supabase
+        .from('semifinished')
+        .select(`
+          id,
+          name,
+          description,
+          recipe_ingredients!inner(
+            ingredient_id,
+            gross_quantity,
+            ingredients(
+              id,
+              name,
+              unit
+            )
+          )
+        `)
+        .eq('recipe_ingredients.ingredient_id', id)
+        .eq('is_active', true);
+
+      if (recipesError || semifinishedError) throw recipesError || semifinishedError;
+
+      const usage = {
+        ingredientId: id,
+        usedInRecipes: recipes?.map(recipe => ({
+          id: recipe.id,
+          name: recipe.name,
+          type: 'recipe',
+          quantity: recipe.recipe_ingredients[0]?.gross_quantity || 0,
+          unit: recipe.recipe_ingredients[0]?.ingredients?.unit || 'unidad'
+        })) || [],
+        usedInSemifinished: semifinished?.map(product => ({
+          id: product.id,
+          name: product.name,
+          type: 'semifinished',
+          quantity: product.recipe_ingredients[0]?.gross_quantity || 0,
+          unit: product.recipe_ingredients[0]?.ingredients?.unit || 'unidad'
+        })) || []
+      };
+
+      return usage;
+    } catch (error) {
+      console.error('Error getting ingredient usage:', error);
+      throw error;
+    }
+  }
+
   // ---------- PRODUCTOS ----------
 
   async getProducts(): Promise<Product[]> {
