@@ -20,14 +20,7 @@ interface Props {
   onClose: () => void;
 }
 
-/**
- * Drawer component to display consolidated products across all IN_PROGRESS orders
- * Shows all products that need to be delivered, grouped by product and description
- * Read-only view for kitchen/service staff to see what needs to be prepared
- *
- * @author Santiago Quirumbay
- * @version 1.0 2026-01-03 Initial implementation
- */
+/* */
 export const ConsolidatedProductsDrawer: FC<Props> = ({ open, onClose }) => {
   const theme = useTheme();
   const { consolidatedProducts, statistics } = useConsolidatedProducts();
@@ -48,7 +41,7 @@ export const ConsolidatedProductsDrawer: FC<Props> = ({ open, onClose }) => {
         }
       }}
     >
-      {/* Header */}
+      {/* */}
       <Box
         sx={{
           position: 'sticky',
@@ -93,7 +86,7 @@ export const ConsolidatedProductsDrawer: FC<Props> = ({ open, onClose }) => {
           </IconButton>
         </Stack>
 
-        {/* Statistics Cards */}
+        {/* */}
         <Stack direction='row' spacing={1} sx={{ px: 2, pb: 2 }}>
           <Paper
             elevation={0}
@@ -149,7 +142,7 @@ export const ConsolidatedProductsDrawer: FC<Props> = ({ open, onClose }) => {
 
       <Divider />
 
-      {/* Products List */}
+      {/* */}
       <Box sx={{ p: 2, flexGrow: 1, overflow: 'auto' }}>
         {consolidatedProducts.length === 0 ? (
           <Stack
@@ -202,7 +195,7 @@ export const ConsolidatedProductsDrawer: FC<Props> = ({ open, onClose }) => {
         )}
       </Box>
 
-      {/* Footer Info */}
+      {/* */}
       {consolidatedProducts.length > 0 && (
         <Box
           sx={{

@@ -49,15 +49,7 @@ export interface IPaymentMethod {
   icon: React.ReactNode;
 }
 
-/**
- * Component for pay a bill
- *
- * @author Santiago Quirumbay
- * @version 1.1 28-02-2025 Remove payment method
- * @author Steven Rosales
- * @version 1.2 15-03-2025 Add iva to bill
- * @version 1.3 20-03-2025 Remove iva from bill
- */
+/* */
 export const PaymentBill = () => {
   const { id } = useParams();
   const { enqueueSnackbar } = useSnackbar();
@@ -207,95 +199,95 @@ export const PaymentBill = () => {
         <Grid container spacing={2}>
           <Grid item xs={12} md={6}>
             <Stack direction='column' spacing={2}>
-              {/* <Card> */}
-              {/*   <CardHeader */}
-              {/*     avatar={ */}
-              {/*       <Chip */}
-              {/*         label={1} */}
-              {/*         size='small' */}
-              {/*         variant={step === 1 ? 'filled' : 'outlined'} */}
-              {/*       /> */}
-              {/*     } */}
-              {/*     title='Cliente' */}
-              {/*     subheaderTypographyProps={{ */}
-              {/*       variant: 'h5', */}
-              {/*       color: 'text.primary' */}
-              {/*     }} */}
-              {/*     action={ */}
-              {/*       step !== 1 && ( */}
-              {/*         <Button */}
-              {/*           size='small' */}
-              {/*           color='inherit' */}
-              {/*           variant='outlined' */}
-              {/*           onClick={handleChangeStep(1)} */}
-              {/*         > */}
-              {/*           Cambiar */}
-              {/*         </Button> */}
-              {/*       ) */}
-              {/*     } */}
-              {/*     subheader={ */}
-              {/*       step !== 1 */}
-              {/*         ? client */}
-              {/*           ? `${client.person.firstName} ${client.person.lastName}` */}
-              {/*           : 'Consumidor final' */}
-              {/*         : '' */}
-              {/*     } */}
-              {/*   /> */}
-              {/*   {step === 1 && ( */}
-              {/*     <CardContent> */}
-              {/*       <> */}
-              {/*         <RadioGroup */}
-              {/*           name='use-radio-group' */}
-              {/*           value={withClient} */}
-              {/*           onChange={handleChangeWithClient} */}
-              {/*         > */}
-              {/*           <FormControlLabel */}
-              {/*             value={false} */}
-              {/*             label={'Consumidor final'} */}
-              {/*             control={<Radio />} */}
-              {/*           /> */}
-              {/*           <FormControlLabel */}
-              {/*             value={true} */}
-              {/*             label={'Seleccionar cliente'} */}
-              {/*             control={<Radio />} */}
-              {/*           /> */}
-              {/*         </RadioGroup> */}
-              {/*         <Box mt={1}> */}
-              {/*           {withClient && ( */}
-              {/*             <ComboBoxClient */}
-              {/*               handleChangeClient={handleChangeClient} */}
-              {/*               client={client} */}
-              {/*             /> */}
-              {/*           )} */}
-              {/*         </Box> */}
-              {/*       </> */}
-              {/*       <Box */}
-              {/*         sx={{ */}
-              {/*           display: 'flex', */}
-              {/*           justifyContent: 'flex-end', */}
-              {/*           mt: 2 */}
-              {/*         }} */}
-              {/*       > */}
-              {/*         {withClient && ( */}
-              {/*           <Button */}
-              {/*             variant='text' */}
-              {/*             startIcon={<PersonAddOutlined />} */}
-              {/*             onClick={openCreateClientModal} */}
-              {/*           > */}
-              {/*             Nuevo cliente */}
-              {/*           </Button> */}
-              {/*         )} */}
-              {/*         <Button */}
-              {/*           onClick={handleChangeStep(2)} */}
-              {/*           variant='contained' */}
-              {/*           disabled={withClient && !client} */}
-              {/*         > */}
-              {/*           Siguiente */}
-              {/*         </Button> */}
-              {/*       </Box> */}
-              {/*     </CardContent> */}
-              {/*   )} */}
-              {/* </Card> */}
+              {/* */}
+              {/* */}
+              {/* */}
+              {/* */}
+              {/* */}
+              {/* */}
+              {/* */}
+              {/* */}
+              {/* */}
+              {/* */}
+              {/* */}
+              {/* */}
+              {/* */}
+              {/* */}
+              {/* */}
+              {/* */}
+              {/* */}
+              {/* */}
+              {/* */}
+              {/* */}
+              {/* */}
+              {/* */}
+              {/* */}
+              {/* */}
+              {/* */}
+              {/* */}
+              {/* */}
+              {/* */}
+              {/* */}
+              {/* */}
+              {/* */}
+              {/* */}
+              {/* */}
+              {/* */}
+              {/* */}
+              {/* */}
+              {/* */}
+              {/* */}
+              {/* */}
+              {/* */}
+              {/* */}
+              {/* */}
+              {/* */}
+              {/* */}
+              {/* */}
+              {/* */}
+              {/* */}
+              {/* */}
+              {/* */}
+              {/* */}
+              {/* */}
+              {/* */}
+              {/* */}
+              {/* */}
+              {/* */}
+              {/* */}
+              {/* */}
+              {/* */}
+              {/* */}
+              {/* */}
+              {/* */}
+              {/* */}
+              {/* */}
+              {/* */}
+              {/* */}
+              {/* */}
+              {/* */}
+              {/* */}
+              {/* */}
+              {/* */}
+              {/* */}
+              {/* */}
+              {/* */}
+              {/* */}
+              {/* */}
+              {/* */}
+              {/* */}
+              {/* */}
+              {/* */}
+              {/* */}
+              {/* */}
+              {/* */}
+              {/* */}
+              {/* */}
+              {/* */}
+              {/* */}
+              {/* */}
+              {/* */}
+              {/* */}
               <Card>
                 <CardHeader
                   title='Forma de pago'

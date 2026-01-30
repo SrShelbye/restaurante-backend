@@ -23,11 +23,7 @@ interface Props {
   order: Order;
 }
 
-/**
- * Modal to close order
- * @version 1.1 13/12/2023 Add NiceModal
- * @version 1.2 15/03/2025 Use useUpdateOrder hook
- */
+/* */
 export const ModalCloseOrder = NiceModal.create<Props>(({ order }) => {
   const modal = useModal();
 

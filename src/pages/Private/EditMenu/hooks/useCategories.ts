@@ -7,10 +7,7 @@ import { queryKeys } from '@/api/query-keys';
 
 export const useCategories = () => {};
 
-/**
- * Hook to create a new category
- * @version 2.0 - Migrated to React Query v5
- */
+/* */
 export const useCreateCategory = () => {
   const { enqueueSnackbar } = useSnackbar();
   const queryClient = useQueryClient();
@@ -28,10 +25,7 @@ export const useCreateCategory = () => {
   });
 };
 
-/**
- * Hook to update a category
- * @version 2.0 - Migrated to React Query v5
- */
+/* */
 export const useUpdateCategory = () => {
   const { enqueueSnackbar } = useSnackbar();
   const queryClient = useQueryClient();

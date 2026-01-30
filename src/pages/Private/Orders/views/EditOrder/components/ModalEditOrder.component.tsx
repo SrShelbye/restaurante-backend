@@ -29,11 +29,7 @@ interface Props {
   order: Order;
 }
 
-/**
- * Modal to edit an order
- * @author Steven Rosales
- * @version 1.0 17/03/2025 Adds type order
- */
+/* */
 export const ModalEditOrder: FC<Props> = ({ open, closeModal, order }) => {
   const [type, setType] = useState<TypeOrder>(order.type);
 
@@ -122,7 +118,7 @@ export const ModalEditOrder: FC<Props> = ({ open, closeModal, order }) => {
       >
         <Grid container spacing={3}>
           <Grid item xs={12}>
-            {/* <InputLabel >Tipo de pedido</InputLabel> */}
+            {/* */}
             <OrderTypeSelector type={type} setType={handleChangeType} />
           </Grid>
           {type === ('IN_PLACE' as TypeOrder) && (
@@ -145,11 +141,7 @@ export const ModalEditOrder: FC<Props> = ({ open, closeModal, order }) => {
             />
           </Grid>
         </Grid>
-        {/* <Divider sx={{ my: 3 }} />
-
-        <Typography>
-          Información adicional
-        </Typography> */}
+        {/* */}
 
         <Grid container spacing={2} mt={1}>
           <Grid item xs={12}>

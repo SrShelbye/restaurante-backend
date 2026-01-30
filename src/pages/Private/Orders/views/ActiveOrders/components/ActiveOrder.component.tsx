@@ -29,14 +29,7 @@ interface Props {
   productionArea?: ProductionArea;
 }
 
-/**
- * Component to render active order
- * @author Santiago Quirumbay
- * @version 1.1 16/12/2023 Adds productionArea field.
- * @version 1.2 28/12/2023 Updates useUpdateOrder hook.
- * @version 1.3 2025-01-01 Migrated to React Query v5
- * @version 1.4 2026-01-03 Enhanced UI with better visual hierarchy and subcomponents
- */
+/* */
 export const ActiveOrder: FC<Props> = ({
   order,
   setStatusFilter,
@@ -99,13 +92,13 @@ export const ActiveOrder: FC<Props> = ({
         overflow: 'visible'
       }}
     >
-      {/* Enhanced Header */}
+      {/* */}
       <OrderCardHeader order={order} index={index} color={color} />
 
-      {/* Enhanced Metadata */}
+      {/* */}
       <OrderMetadata order={order} color={color} />
 
-      {/* Products by Production Area */}
+      {/* */}
       <Stack spacing={1.5} sx={{ px: 2, py: 1 }}>
         <Stack spacing={1.5} direction='column'>
           {productionAreas.map((area) => (
@@ -119,14 +112,14 @@ export const ActiveOrder: FC<Props> = ({
           ))}
         </Stack>
 
-        {/* Add Product Button */}
+        {/* */}
         <BtnAddProduct order={order} />
       </Stack>
 
-      {/* Divider before actions */}
+      {/* */}
       {order.status !== OrderStatus.DELIVERED && <Divider sx={{ mt: 0.5 }} />}
 
-      {/* Enhanced Actions */}
+      {/* */}
       <OrderActions
         order={order}
         onStartOrder={handleStartOrder}

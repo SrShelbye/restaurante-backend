@@ -20,10 +20,7 @@ interface Props {
   bill: Bill;
 }
 
-/**
- * Component to display the bill card
- * @version v1.0 24-12-2023
- */
+/* */
 export const BillCard: FC<Props> = ({ bill }) => {
   const navigate = useNavigate();
 

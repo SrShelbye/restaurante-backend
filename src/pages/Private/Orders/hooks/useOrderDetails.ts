@@ -5,10 +5,7 @@ import { useEmitWebSocketsEvent } from '../../../../hooks';
 import { Order } from '../../../../models';
 import { DeleteOrderDetailDto, UpdateOrderDetailDto } from '../dto';
 
-/**
- * Custom hook to create a new order detail with websockets
- * @version 1.0 28-12-2023
- */
+/* */
 export const useCreateOrderDetail = () => {
   const { enqueueSnackbar } = useSnackbar();
 
@@ -25,10 +22,7 @@ export const useCreateOrderDetail = () => {
   );
 };
 
-/**
- * Custom hook to update an order detail with websockets
- * @version 1.0 28-12-2023
- */
+/* */
 export const useUpdateOrderDetail = () => {
   const { enqueueSnackbar } = useSnackbar();
 
@@ -45,10 +39,7 @@ export const useUpdateOrderDetail = () => {
   );
 };
 
-/**
- * Custom hook to delete an order detail with websockets
- * @version 1.0 28-12-2023
- */
+/* */
 export const useDeleteOrderDetail = () => {
   const { enqueueSnackbar } = useSnackbar();
 

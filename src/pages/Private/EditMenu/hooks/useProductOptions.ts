@@ -13,10 +13,7 @@ import { useDispatch } from 'react-redux';
 import { setActiveProduct, updateProduct } from '../../../../redux';
 import { queryKeys } from '@/api/query-keys';
 
-/**
- * Hook to fetch a single product option by ID
- * @version 2.0 - Migrated to React Query v5
- */
+/* */
 export const useProductOption = (productionAreaId: number) => {
   return useQuery({
     queryKey: ['production-area', productionAreaId],
@@ -24,10 +21,7 @@ export const useProductOption = (productionAreaId: number) => {
   });
 };
 
-/**
- * Hook to fetch all product options
- * @version 2.0 - Migrated to React Query v5
- */
+/* */
 export const useProductOptions = () => {
   return useQuery({
     queryKey: ['production-areas'],
@@ -35,10 +29,7 @@ export const useProductOptions = () => {
   });
 };
 
-/**
- * Hook to create a new product option
- * @version 2.0 - Migrated to React Query v5
- */
+/* */
 export const useCreateProductOption = (productId: string) => {
   const { enqueueSnackbar } = useSnackbar();
   const { findProductById } = useEditMenuStore();
@@ -67,10 +58,7 @@ export const useCreateProductOption = (productId: string) => {
   });
 };
 
-/**
- * Hook to update a product option
- * @version 2.0 - Migrated to React Query v5
- */
+/* */
 export const useUpdateProductOption = (productId: string) => {
   const { enqueueSnackbar } = useSnackbar();
   const { findProductById } = useEditMenuStore();

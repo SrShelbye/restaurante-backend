@@ -54,13 +54,7 @@ const initialForm: UpdateProductDto = {
   iva: 0
 };
 
-/**
- * Component to edit a product
- * @author Santiago Quirumbay
- * @version 1.1 19/12/2023 Adds Product Options and use activeProduct
- * @author Steven Rosales
- * @version 1.2 15/03/2025 Add iva to product
- */
+/* */
 export const FormProduct: FC<Props> = ({ product }) => {
   const [selectedProduct, setSelectedProduct] = useState<IProduct>(product);
 
@@ -486,13 +480,13 @@ export const FormProduct: FC<Props> = ({ product }) => {
                 }
               />
               <List>
-                {/* {product.options?.map((option) => ( */}
-                {/*   <ProductOptionItem */}
-                {/*     key={option.id} */}
-                {/*     productOption={option} */}
-                {/*     productId={selectedProduct.id} */}
-                {/*   /> */}
-                {/* ))} */}
+                {/* */}
+                {/* */}
+                {/* */}
+                {/* */}
+                {/* */}
+                {/* */}
+                {/* */}
               </List>
             </Card>
           </Grid>
@@ -537,46 +531,7 @@ export const FormProduct: FC<Props> = ({ product }) => {
                 </ListItem>
               </List>
 
-              {/* <Grid container spacing={2}>
-                  <Grid item xs={12} md={3}>
-                    <FormControlLabel
-                      label="Activo"
-                      control={
-                        <Controller
-                          name="isActive"
-                          control={control}
-                          render={({ field: { onChange, value } }) => (
-                            <Switch
-                              checked={value}
-                              onChange={onChange}
-                              color="success"
-                            />
-                          )}
-                        />
-                      }
-                    />
-                  </Grid>
-                  <Grid item xs={12} md={3}>
-                    
-
-                    <FormControlLabel
-                      label="Público"
-                      control={
-                        <Controller
-                          name="isPublic"
-                          control={control}
-                          render={({ field: { onChange, value } }) => (
-                            <Switch
-                              checked={value}
-                              onChange={onChange}
-                              color="success"
-                            />
-                          )}
-                        />
-                      }
-                    />
-                  </Grid>
-                </Grid> */}
+              {/* */}
             </Card>
           </Grid>
         </Grid>

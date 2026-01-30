@@ -14,10 +14,7 @@ interface Props {
   detalle: ICreateOrderDetail;
 }
 
-/**
- * Component to show the details of the new order, which is used in the modal to add a new detail and in the order details component
- * @version 1.1 20/12/2023 Adds product options chip
- */
+/* */
 export const NewOrderDetail: FC<Props> = ({ detalle }) => {
   const [quantity, setQuantity] = useState<number>(detalle.quantity);
 
@@ -61,15 +58,7 @@ export const NewOrderDetail: FC<Props> = ({ detalle }) => {
           <Stack>
             <Typography variant='body1' whiteSpace={'normal'}>
               {detalle.quantity} × {detalle.product.name}
-              {/* {detalle.productOption && (
-                <Chip
-                  sx={{ ml: 1 }}
-                  label={`${detalle.productOption?.name} (${formatMoney(
-                    detalle.productOption?.price
-                  )})`}
-                  size="small"
-                />
-              )} */}
+              {/* */}
             </Typography>
 
             {detalle.description && (

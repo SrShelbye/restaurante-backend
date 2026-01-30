@@ -37,10 +37,7 @@ export enum OrderStatusSpanish {
   CANCELLED = 'CANCELADO'
 }
 
-/**
- * Order Model
- * @version v1.1 22-12-2023 Adds the field bills and remove invoices
- */
+/* */
 export interface Order {
   notes: string;
   deliveryTime: Date;
@@ -60,11 +57,7 @@ export interface Order {
   bills: Bill[];
 }
 
-/**
- * Order Detail Model
- * @author Steven Rosales
- * @version v1.1 22-12-2023 Adds type order
- */
+/* */
 export interface IOrderDetail {
   id: string;
 

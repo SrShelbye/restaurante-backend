@@ -26,10 +26,7 @@ import { useSearch } from '../../../../hooks/useSearch';
 import { UpdateUserRoleDto } from '../dto/update-user-role.dto';
 import { queryKeys } from '@/api/query-keys';
 
-/**
- * Hook to fetch and manage users list with pagination and search
- * @version 2.0 - Migrated to React Query v5
- */
+/* */
 export const useUsers = () => {
   const dispatch = useDispatch();
 
@@ -73,10 +70,7 @@ export const useUsers = () => {
   };
 };
 
-/**
- * Hook to fetch user suggestions for autocomplete
- * @version 2.0 - Migrated to React Query v5
- */
+/* */
 export const useUsersSuggestions = () => {
   const { search, debouncedSearch, handleChangeSearch } = useSearch(1000);
 
@@ -94,10 +88,7 @@ export const useUsersSuggestions = () => {
   };
 };
 
-/**
- * Hook to fetch a single user by ID
- * @version 2.0 - Migrated to React Query v5
- */
+/* */
 export const useUser = (term: string, enabled = true) => {
   const { enqueueSnackbar } = useSnackbar();
 
@@ -109,11 +100,7 @@ export const useUser = (term: string, enabled = true) => {
   });
 };
 
-/**
- * Hook to create a new user
- * Returns mutation object - use mutation.mutate(data, { onSuccess, onError }) in components
- * @version 2.0 - Migrated to React Query v5
- */
+/* */
 export const useCreateUser = () => {
   const { enqueueSnackbar } = useSnackbar();
 
@@ -128,11 +115,7 @@ export const useCreateUser = () => {
   });
 };
 
-/**
- * Hook to update user information and roles
- * Returns object with two mutations: updateUserMutation and updateUserRole
- * @version 2.0 - Migrated to React Query v5
- */
+/* */
 export const useUpdateUser = () => {
   const { enqueueSnackbar } = useSnackbar();
   const queryClient = useQueryClient();
@@ -177,10 +160,7 @@ export const useUpdateUser = () => {
   };
 };
 
-/**
- * Hook to change user password
- * @version 2.0 - Migrated to React Query v5
- */
+/* */
 export const useChangePasswordUser = () => {
   const { enqueueSnackbar } = useSnackbar();
   return useMutation<void, unknown, ChangePasswordDto>({
@@ -198,10 +178,7 @@ export const useChangePasswordUser = () => {
   });
 };
 
-/**
- * Hook to reset user password to default
- * @version 2.0 - Migrated to React Query v5
- */
+/* */
 export const useResetPasswordUser = () => {
   const { enqueueSnackbar } = useSnackbar();
 
@@ -227,10 +204,7 @@ export const useDeleteUser = () => {
   return {};
 };
 
-/**
- * Hook to remove user from restaurant
- * @version 2.0 - React Query
- */
+/* */
 export const useRemoveUserFromRestaurant = () => {
   const { enqueueSnackbar } = useSnackbar();
   const queryClient = useQueryClient();

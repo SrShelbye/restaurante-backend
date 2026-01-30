@@ -8,12 +8,10 @@ export function Copyright(props: any) {
       align='center'
       {...props}
     >
-      {'Copyright © '}
-      <Link color='inherit' href='https://mui.com/'>
-        Santiago Quirumbay
-      </Link>{' '}
+      {'Copyright '}
       {new Date().getFullYear()}
       {'.'}
+      {props.site}
     </Typography>
   );
 }

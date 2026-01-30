@@ -21,10 +21,7 @@ import { useDispatch } from 'react-redux';
 import { onLogin } from '@/redux';
 import { LoginResponse } from '@/models/dto/auth.dto';
 
-/**
- * Hook to switch between restaurants
- * @version 2.0 - Migrated to React Query v5
- */
+/* */
 export const switchRestaurantMutation = () => {
   const { enqueueSnackbar } = useSnackbar();
   const { setRestaurant } = useRestaurantStore((state) => state);
@@ -48,10 +45,7 @@ export const switchRestaurantMutation = () => {
   });
 };
 
-/**
- * Hook to fetch current restaurant data
- * @version 2.0 - Migrated to React Query v5
- */
+/* */
 export const useRestaurant = () => {
   const { enqueueSnackbar } = useSnackbar();
 
@@ -80,10 +74,7 @@ export const useRestaurant = () => {
   return restaurantQuery;
 };
 
-/**
- * Hook to update restaurant information
- * @version 2.0 - Migrated to React Query v5
- */
+/* */
 export const useUpdateRestaurant = () => {
   const { enqueueSnackbar } = useSnackbar();
 
@@ -104,10 +95,7 @@ export const useUpdateRestaurant = () => {
   });
 };
 
-/**
- * Hook to create a new restaurant
- * @version 2.0 - Migrated to React Query v5
- */
+/* */
 export const useCreateRestaurant = () => {
   const { enqueueSnackbar } = useSnackbar();
   const { setRestaurant } = useRestaurantStore((state) => state);
@@ -129,10 +117,7 @@ export const useCreateRestaurant = () => {
   });
 };
 
-/**
- * Hook to update restaurant logo
- * @version 2.0 - Migrated to React Query v5
- */
+/* */
 export const useUpdateRestaurantLogo = () => {
   const { enqueueSnackbar } = useSnackbar();
 

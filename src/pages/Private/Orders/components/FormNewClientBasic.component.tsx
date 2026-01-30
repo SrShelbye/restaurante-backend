@@ -14,10 +14,7 @@ import { useUpdateOrder } from '../hooks';
 interface Props {
   callback?: () => void;
 }
-/**
- * Form to create a new client and add it to the active order or to the new order
- * @version 1.1 28-12-2023 Update useUpdateOrder hook
- */
+/* */
 export const FormNewClientBasic: FC<Props> = ({ callback }) => {
   const {
     register,

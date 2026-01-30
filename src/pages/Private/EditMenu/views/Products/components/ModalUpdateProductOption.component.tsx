@@ -25,11 +25,7 @@ interface Props {
   productId: string;
 }
 
-/**
- * Modal to update a product option from a product
- * @author Santiago Quirumbay
- * @version 1.0 18/12/2023
- */
+/* */
 export const ModalUpdateProductOption = NiceModal.create<Props>(
   ({ productOption, productId }) => {
     const modal = useModal();

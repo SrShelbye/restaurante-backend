@@ -1,12 +1,4 @@
-/**
- * Centralized Query Key Factory for React Query v5
- *
- * This provides type-safe, consistent query keys across the application.
- * Using a factory pattern prevents cache invalidation bugs and makes refactoring easier.
- *
- * @author Migration to React Query v5
- * @version 1.0 2025-01-01
- */
+/* */
 
 // User filters and params types
 export interface UserFilters {
@@ -31,10 +23,7 @@ export interface OrderFilters {
   // Add order-specific filters if needed
 }
 
-/**
- * Query Keys Factory
- * Use these throughout the app for consistent cache keys
- */
+/* */
 export const queryKeys = {
   // Users module
   users: {

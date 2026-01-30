@@ -25,12 +25,7 @@ interface Props {
   order: Order;
 }
 
-/**
- * Modal to create a bill
- *
- * @author Santiago Quirumbay
- *
- */
+/* */
 export const CreateBillModal = NiceModal.create<Props>(({ order }) => {
   // const { handleClose, isOpen, handleOpen } = useModal();
   const modal = useNiceModal();
@@ -64,11 +59,7 @@ export const CreateBillModal = NiceModal.create<Props>(({ order }) => {
         <DialogContent>
           <Account order={order} onSuccess={closeModal} />
         </DialogContent>
-        {/* <DialogActions>
-          <Button>
-            Close
-          </Button>
-        </DialogActions> */}
+        {/* */}
       </Dialog>
     </>
   );

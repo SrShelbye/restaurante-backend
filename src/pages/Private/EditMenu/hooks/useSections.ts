@@ -21,10 +21,7 @@ import { UploadExcelResponseDto } from '../dto/upload-excel.dto';
 
 export const useSections = () => {};
 
-/**
- * Hook to create a new section
- * @version 2.0 - Migrated to React Query v5
- */
+/* */
 export const useCreateSection = () => {
   const { enqueueSnackbar } = useSnackbar();
   const queryClient = useQueryClient();
@@ -43,10 +40,7 @@ export const useCreateSection = () => {
   });
 };
 
-/**
- * Hook to update a section
- * @version 2.0 - Migrated to React Query v5
- */
+/* */
 export const useUpdateSection = () => {
   const { enqueueSnackbar } = useSnackbar();
   const dispatch = useDispatch();
@@ -66,10 +60,7 @@ export const useUpdateSection = () => {
   });
 };
 
-/**
- * Hook to update multiple sections at once
- * @version 2.0 - Migrated to React Query v5
- */
+/* */
 export const useUpdateManySections = () => {
   const { enqueueSnackbar } = useSnackbar();
   const dispatch = useDispatch();
@@ -89,10 +80,7 @@ export const useUpdateManySections = () => {
   });
 };
 
-/**
- * Hook to upload menu from Excel file
- * @version 1.0 - React Query v5
- */
+/* */
 export const useUploadMenuExcel = () => {
   const { enqueueSnackbar } = useSnackbar();
   const queryClient = useQueryClient();

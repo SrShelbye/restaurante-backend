@@ -28,10 +28,7 @@ import { generateOrderPdf } from '../../../helpers/pdf-orders';
 import { useRestaurantStore } from '@/pages/Private/Common/store/restaurantStore';
 interface Props {}
 
-/**
- * @author Steven Rosales
- * @version V1.0 29-03-2025 Add restaurant information to PDF
- */
+/* */
 export const ModalOrderAdded: FC<Props> = () => {
   const { handleClose, isOpen, setOpen } = useModal();
 
@@ -89,12 +86,12 @@ export const ModalOrderAdded: FC<Props> = () => {
               <PrintOutlined sx={{ mr: 1 }} />
               Imprimir
             </Button>
-            {/* <Button */}
-            {/*   variant='outlined' */}
-            {/*   onClick={() => navigate('/orders/actives')} */}
-            {/* > */}
-            {/*   <SoupKitchenOutlined /> */}
-            {/* </Button> */}
+            {/* */}
+            {/* */}
+            {/* */}
+            {/* */}
+            {/* */}
+            {/* */}
 
             <Button
               variant='outlined'

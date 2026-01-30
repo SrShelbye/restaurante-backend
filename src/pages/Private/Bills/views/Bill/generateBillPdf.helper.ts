@@ -16,11 +16,7 @@ import { formatMoney } from '@/pages/Private/Common/helpers/format-money.helper'
 import { getPaymentMethod } from '@/pages/Private/Common/helpers/get-payment-method';
 import { Bill } from '@/models/bill.model';
 
-/**
- * Generate a pdf invoice
- * @version v1.0 11-04-2025 Add generate bill pdf
- * @author Steven Rosales
- */
+/* */
 
 export const generateBillPdf = async (
   invoice: Bill,

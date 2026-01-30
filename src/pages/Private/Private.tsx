@@ -28,16 +28,7 @@ import { useOnTableUpdated } from './Tables/hooks/useOnWebSocketsEventsTables';
 import { selectAuth } from '@/redux';
 import { useEffect } from 'react';
 
-/**
- * Component that contains the private routes of the application
- * @author Santiago Quirumbay
- * @version 1.1 28/11/2023 Adding the useMenu hook to load the menu
- * @version 1.2 26/12/2023 Adds socket event interface and tablesQuery
- * @version 1.3 27/12/2023 Refactoring the code to use the useTahbles and useOnTableUpdated hooks
- * @version 1.4 02/01/2024 Adding the useOnOrderCreated, useOnOrderUpdated and useOnOrderDeleted hooks
- *
- * @returns JSX.Element
- */
+/* */
 export const Private = () => {
   const content = useRoutes(PrivateRouter);
 

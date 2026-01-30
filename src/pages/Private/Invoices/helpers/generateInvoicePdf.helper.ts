@@ -16,11 +16,7 @@ import { es } from 'date-fns/locale';
 import { Restaurant } from '../../Common/models/restaurant.model';
 
 import { Invoice } from '../../Orders/models/Invoice.model';
-/**
- * Generate a pdf invoice
- * @version v1.5 30-03-2025 Add restaurant information to bill
- * @author Steven Rosales
- */
+/* */
 
 export const generateInvoicePdf = async (
   invoice: Invoice,

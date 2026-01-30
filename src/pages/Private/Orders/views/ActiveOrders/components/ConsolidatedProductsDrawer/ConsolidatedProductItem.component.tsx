@@ -20,13 +20,7 @@ interface Props {
   defaultExpanded?: boolean;
 }
 
-/**
- * Component to display a consolidated product with all its sources
- * Shows product name, total pending quantity, and expandable list of sources
- *
- * @author Santiago Quirumbay
- * @version 1.0 2026-01-03 Initial implementation
- */
+/* */
 export const ConsolidatedProductItem: FC<Props> = ({
   product,
   defaultExpanded = false
@@ -52,7 +46,7 @@ export const ConsolidatedProductItem: FC<Props> = ({
         transition: 'all 0.2s ease'
       }}
     >
-      {/* Product Header */}
+      {/* */}
       <AccordionSummary
         expandIcon={
           <ExpandMore
@@ -81,7 +75,7 @@ export const ConsolidatedProductItem: FC<Props> = ({
           alignItems='center'
           sx={{ width: '100%', pr: 2 }}
         >
-          {/* Product Icon */}
+          {/* */}
           <Box
             sx={{
               bgcolor: alpha(theme.palette.primary.main, 0.15),
@@ -98,7 +92,7 @@ export const ConsolidatedProductItem: FC<Props> = ({
             <Restaurant fontSize='small' />
           </Box>
 
-          {/* Product Name and Count */}
+          {/* */}
           <Stack spacing={0.5} flexGrow={1}>
             <Typography variant='subtitle1' fontWeight={600}>
               {product.productName}
@@ -109,14 +103,14 @@ export const ConsolidatedProductItem: FC<Props> = ({
             </Typography>
           </Stack>
 
-          {/* Total Pending Badge */}
+          {/* */}
           <Typography variant='h6' fontWeight={600}>
             {product.totalPending}
           </Typography>
         </Stack>
       </AccordionSummary>
 
-      {/* Product Sources (Orders) */}
+      {/* */}
       <AccordionDetails sx={{ p: 0 }}>
         <Stack
           spacing={0.5}

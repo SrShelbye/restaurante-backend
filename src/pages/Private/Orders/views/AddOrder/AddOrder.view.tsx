@@ -105,7 +105,7 @@ export const AddOrder = () => {
 
         <Grid container spacing={2}>
           <Grid item xs={12} md={8}>
-            {/* <Card> */}
+            {/* */}
             <Box display='flex' flexDirection='row'>
               <Stack spacing={2} flex={1}>
                 <Box
@@ -162,10 +162,10 @@ export const AddOrder = () => {
                 </Box>
               </Stack>
             </Box>
-            {/* </Card> */}
+            {/* */}
             {activeStep === 0 && (
               <>
-                {/* <OrderDetails /> */}
+                {/* */}
 
                 <Stack
                   direction='row'
@@ -173,16 +173,16 @@ export const AddOrder = () => {
                   justifyContent='space-between'
                   my={2}
                 >
-                  {/* <Button */}
-                  {/*   startIcon={<ShoppingCart />} */}
-                  {/*   fullWidth={false} */}
-                  {/*   onClick={() => { */}
-                  {/*     navigate('/orders/add/menu'); */}
-                  {/*   }} */}
-                  {/*   color='primary' */}
-                  {/* > */}
-                  {/*   Añadir productos */}
-                  {/* </Button> */}
+                  {/* */}
+                  {/* */}
+                  {/* */}
+                  {/* */}
+                  {/* */}
+                  {/* */}
+                  {/* */}
+                  {/* */}
+                  {/* */}
+                  {/* */}
                   <Button
                     color='error'
                     variant='outlined'
@@ -233,16 +233,7 @@ export const AddOrder = () => {
               </>
             )}
 
-            {/* <Button
-
-                onClick={() => {
-                  dispatch({ type: OrderActionType.RESET })
-                  navigate('/orders')
-                }}
-                color='error'
-              >
-                Limpiar
-              </Button> */}
+            {/* */}
           </Grid>
 
           <Grid item xs={12} md={4}>

@@ -13,9 +13,7 @@ import { useRestaurantStore } from '@/pages/Private/Common/store/restaurantStore
 
 const Private = lazy(() => import('../pages/Private/Private'));
 
-/**
- * @author Santiago Quirumbay
- */
+/* */
 export const AppRouter = () => {
   const { status } = useAppSelector(selectAuth);
   const { restaurant } = useRestaurantStore((state) => state);

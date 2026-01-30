@@ -18,11 +18,7 @@ import PeopleOutlineIcon from '@mui/icons-material/PeopleOutline';
 
 import { ValidRoles } from '../../../Common/models/valid-roles.model';
 
-/**
- * @version 1.1 31-01-2025 Remove finance
- * @author Steven Rosales
- * @version 1.2 20-03-2025 Add cash register
- */
+/* */
 const generalSection: MenuSection = {
   title: '',
   allowedRoles: [ValidRoles.admin],
@@ -64,10 +60,7 @@ const generalSection: MenuSection = {
   ]
 };
 
-/**
- * Routes for orders
- * @version v1.1 22-12-2023 Change invoices for bills
- */
+/* */
 const ordersSection = {
   title: 'Pedidos',
   items: [

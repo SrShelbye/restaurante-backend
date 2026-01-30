@@ -51,10 +51,7 @@ interface Props {
   categoria: ICategory;
 }
 
-/**
- *@author Santiago Quirumbay
- *@version 1.1 30/11/2023 Se agrego el componente de Material UI Popover
- */
+/* */
 export const Category: FC<Props> = ({ categoria }) => {
   const navigate = useNavigate();
 

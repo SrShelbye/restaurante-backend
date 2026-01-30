@@ -21,12 +21,7 @@ const initialState: MenuState = {
   activeProduct: null
 };
 
-/**
- * @description Redux slice for menu
- *
- * @author Santiago Quirumbay
- * @version 1.1 28/11/2023 Added crud products and categories to the state
- */
+/* */
 export const menuSlice = createSlice({
   name: 'menu',
   initialState,

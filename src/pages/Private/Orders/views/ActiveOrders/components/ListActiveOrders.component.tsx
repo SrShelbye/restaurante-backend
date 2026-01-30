@@ -29,11 +29,7 @@ import { ModalStartOrder } from './ModalStartOrder.component';
 import { useProductionAreasStore } from '../../../../Common/store/production-areas-store';
 import { ProductionArea } from '../../../../Common/models/production-area.model';
 
-/**
- * Component to render active order
- * @author Santiago Quirumbay
- * @version 1.1 16/12/2023 Adds productionArea field.
- */
+/* */
 export const ListActiveOrders = () => {
   const { productionAreaActive, productionAreas, setProductionAreaActive } =
     useProductionAreasStore();
@@ -78,34 +74,7 @@ export const ListActiveOrders = () => {
   return (
     <>
       <ModalStartOrder />
-      {/* <Box
-        sx={{
-          display: "flex",
-          
-          overflowX: "auto",
-        }}
-      >
-        <Tabs
-          value={productionAreaActive?.id || ""}
-          onChange={handleChangeArea}
-          variant="scrollable"
-        >
-          {productionAreas.map((productionArea) => (
-            <Tab
-              key={productionArea.id}
-              label={productionArea.name}
-              value={productionArea.id}
-              icon={
-                <Chip
-                  label={filterOrdersByProductionArea(productionArea).length}
-                  size="small"
-                />
-              }
-              iconPosition="end"
-            />
-          ))}
-        </Tabs>
-      </Box> */}
+      {/* */}
 
       <Box
         sx={{
@@ -227,29 +196,29 @@ export const ListActiveOrders = () => {
           <Grid container spacing={2}>
             {ordersFiltered.map((order, index) => {
               {
-                /* const details = productionAreaActive */
+                /* */
               }
               {
-                /*   ? order.details.filter( */
+                /* */
               }
               {
-                /*       (detail) => */
+                /* */
               }
               {
-                /*         detail.product.productionArea.id === */
+                /* */
               }
               {
-                /*         productionAreaActive?.id */
+                /* */
               }
               {
-                /*     ) */
+                /* */
               }
               {
-                /*   : order.details; */
+                /* */
               }
 
               {
-                /* if (details.length >= 1) */
+                /* */
               }
               return (
                 <Grid item xs={12} sm={6} md={4} key={order.id}>

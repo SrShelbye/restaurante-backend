@@ -25,15 +25,7 @@ import { useBill } from '../../hooks/useBills';
 import { getPriceWithoutIva } from '@/helpers/product.helper';
 import { useRestaurant } from '@/pages/Private/Restaurant/hooks/useRestaurant';
 import { generateBillPdf } from './generateBillPdf.helper';
-/**
- * View to display the bill
- * @version v1.0 24-12-2023
- * @version v1.1 15-03-2025 Add iva to bill
- * @version v1.2 20-03-2025 Remove iva from bill
- * @author Steven Rosales
- * @version v1.3 29-03-2025 Delete share button
- * @version v1.4 30-03-2025 Add restaurant information to bill
- */
+/* */
 export const Bill = () => {
   const { id } = useParams();
 
@@ -165,7 +157,7 @@ export const Bill = () => {
                     <TableCell>Cantidad</TableCell>
                     <TableCell>Producto</TableCell>
                     <TableCell align='right'>Precio</TableCell>
-                    {/* <TableCell align='right'>IVA</TableCell> */}
+                    {/* */}
                     <TableCell align='right'>Subtotal</TableCell>
                   </TableRow>
                 </TableHead>
@@ -195,17 +187,7 @@ export const Bill = () => {
                             )
                           )}
                         </TableCell>
-                        {/* <TableCell align='right'>
-                          {formatMoney(
-                            getIvaValue(
-                              detail.price,
-                              detail.orderDetail.product.iva
-                            )
-                          )}
-                          <Typography variant='caption' color='textSecondary'>
-                            {` (${formatPercentage(Number(detail.orderDetail.product.iva))})`}
-                          </Typography>
-                        </TableCell> */}
+                        {/* */}
                         <TableCell align='right'>
                           {formatMoney(detail.total)}
                         </TableCell>

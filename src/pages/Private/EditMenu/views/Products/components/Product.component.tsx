@@ -37,10 +37,7 @@ import { useUpdateProduct } from '../../../hooks/useProducts';
 import { useAppDispatch } from '@/hooks';
 import { updateProduct } from '@/redux';
 
-/**
- * @author Steven Rosales
- * @version 1.0 15/03/2025 Update product card
- */
+/* */
 interface Props {
   producto: IProduct;
 }
@@ -171,10 +168,7 @@ export const Product: FC<Props> = ({ producto }) => {
           <EditOutlined fontSize='small' sx={{ mr: 2 }} />
           Editar
         </MenuItem>
-        {/* <MenuItem onClick={navigateToViewProduct}>
-          <Visibility fontSize="small" sx={{ mr: 2 }} />
-          Ver
-        </MenuItem> */}
+        {/* */}
         {producto.isActive ? (
           <MenuItem onClick={handleDelete} sx={{ color: 'error.main' }}>
             <DeleteOutlined fontSize='small' sx={{ mr: 2 }} />

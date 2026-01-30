@@ -90,10 +90,7 @@ interface PropsOrder {
   order: Order;
 }
 
-/**
- * Componente to show order summary
- * @version v1.1 22-12-2023 Adds bills
- */
+/* */
 export const OrderSummary: FC<PropsOrder> = ({ order }) => {
   const { handleClose, handleOpen, isOpen } = useModal();
 
@@ -145,7 +142,7 @@ export const OrderSummary: FC<PropsOrder> = ({ order }) => {
 
         <Grid item xs={12} md={5}>
           <Stack spacing={2}>
-            {/* <EditOrderStatus orderId={order.id} status={order.status} /> */}
+            {/* */}
             <Card>
               <CardHeader
                 titleTypographyProps={{ variant: 'h5' }}

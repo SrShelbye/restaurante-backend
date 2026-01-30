@@ -21,14 +21,7 @@ const StyledProductImg = styled('img')({
   objectFit: 'cover',
   position: 'absolute'
 });
-/**
- * Product component.
- * @param product - The product to display.
- * @param onClick - The function to call when the product is clicked.
- * @returns The product component.
- * @author Steven Rosales
- * @version 1.0 15/03/2025
- */
+/* */
 export const Product: FC<Props> = ({ product, onClick }) => {
   const addProductoToOrder = () => {
     NiceModal.show(ModalAddDetail, { detail: { product, quantity: 1 } });
@@ -68,9 +61,9 @@ export const Product: FC<Props> = ({ product, onClick }) => {
           spacing={1}
           sx={{ p: 2, justifyContent: 'space-between', height: '100%' }}
         >
-          {/* <Typography fontSize={'0.8rem'} color='text.secondary'> */}
-          {/*   {product.quantity} disponibles */}
-          {/* </Typography> */}
+          {/* */}
+          {/* */}
+          {/* */}
           <Link
             color='inherit'
             underline='hover'

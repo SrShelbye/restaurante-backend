@@ -9,10 +9,7 @@ import { useEffect } from 'react';
 import { usePaginationAsync } from '../../../../hooks/usePaginationAsync';
 import { useSearch } from '../../../../hooks/useSearch';
 
-/**
- * Hook to fetch clients with pagination and search
- * @version 2.0 - Migrated to React Query v5
- */
+/* */
 export const useClients = () => {
   const pagination = usePaginationAsync();
 
@@ -44,10 +41,7 @@ export const useClients = () => {
   };
 };
 
-/**
- * Hook to fetch a single client by ID
- * @version 2.0 - Migrated to React Query v5
- */
+/* */
 export const useClient = (id: string, enabled = true) => {
   return useQuery<IClient>({
     queryKey: ['client', id],
@@ -57,10 +51,7 @@ export const useClient = (id: string, enabled = true) => {
   });
 };
 
-/**
- * Hook to create a new client
- * @version 2.0 - Migrated to React Query v5
- */
+/* */
 export const useCreateCliente = () => {
   const { enqueueSnackbar } = useSnackbar();
   const queryClient = useQueryClient();
@@ -78,10 +69,7 @@ export const useCreateCliente = () => {
   });
 };
 
-/**
- * Hook to update a client
- * @version 2.0 - Migrated to React Query v5
- */
+/* */
 export const useUpdateClient = () => {
   const { enqueueSnackbar } = useSnackbar();
   const queryClient = useQueryClient();

@@ -21,10 +21,7 @@ import { useFilterOrders } from './useFilterOrders';
 import { useDateFilter } from '../../../../hooks/useDateFilter';
 import { queryKeys } from '@/api/query-keys';
 
-/**
- * Hook to fetch orders with filtering and pagination
- * @version 2.0 - Migrated to React Query v5
- */
+/* */
 export const useOrders = () => {
   const filter = useFilterOrders();
 
@@ -68,10 +65,7 @@ export const useOrders = () => {
   };
 };
 
-/**
- * Hook to fetch active orders
- * @version 2.0 - Migrated to React Query v5
- */
+/* */
 export const useActiveOrders = () => {
   const pagination = usePaginationAsync();
 
@@ -109,10 +103,7 @@ export const useActiveOrders = () => {
   };
 };
 
-/**
- * Hook to fetch a single order by ID
- * @version 2.0 - Migrated to React Query v5
- */
+/* */
 export const useOrder = (id: string) => {
   const dispatch = useDispatch();
 
@@ -132,9 +123,7 @@ export const useOrder = (id: string) => {
   return orderQuery;
 };
 
-/**
- * Helper functions for working with orders
- */
+/* */
 export const useOrderHelper = () => {
   const { orders } = useSelector(selectOrders);
 

@@ -292,22 +292,7 @@ export const DrawerSupplier: FC<Props> = ({ supplier }) => {
                       />
                     </Grid>
 
-                    {/* <Grid item xs={12} >
-
-            <TextField
-
-              label="Dirección"
-              rows={3}
-              fullWidth
-              multiline
-              {
-              ...register('address', {
-                minLength: { value: 2, message: 'Minimo 2 caracteres' },
-              })
-              }
-              helperText={<Typography color="red">{errors.address?.message} </ Typography>}
-            />
-          </Grid> */}
+                    {/* */}
 
                     <Grid item xs={12} display='flex' justifyContent='right'>
                       <LoadingButton

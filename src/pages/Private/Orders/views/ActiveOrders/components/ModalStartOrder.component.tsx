@@ -14,10 +14,7 @@ import { useUpdateOrder } from '../../../hooks';
 import { UpdateOrderDto } from '../../../dto';
 import { LoadingButton } from '@mui/lab';
 
-/**
- * Component that shows a modal to start an order if there are pending orders
- * @version 1.1 28/12/2023 Updates useUpdateOrder hook.
- */
+/* */
 export const ModalStartOrder = () => {
   const [order, setOrder] = useState<Order | null>(null);
 

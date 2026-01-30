@@ -8,10 +8,7 @@ import { UpdateOrderDto } from '../dto';
 import { useDispatch } from 'react-redux';
 import { setActiveOrder } from '../../../../redux';
 
-/**
- * Custom hook to create a new order with websockets
- * @version 1.0 28-12-2023
- */
+/* */
 export const useCreateOrder = () => {
   const { enqueueSnackbar } = useSnackbar();
 
@@ -29,10 +26,7 @@ export const useCreateOrder = () => {
   );
 };
 
-/**
- * Custom hook to update an order with websockets
- * @version 1.0 28-12-2023
- */
+/* */
 export const useUpdateOrder = () => {
   const { enqueueSnackbar } = useSnackbar();
   const dispatch = useDispatch();
@@ -51,10 +45,7 @@ export const useUpdateOrder = () => {
   );
 };
 
-/**
- * Custom hook to delete an order with websockets
- * @version 1.0 28-12-2023
- */
+/* */
 export const useDeleteOrder = () => {
   const { enqueueSnackbar } = useSnackbar();
 

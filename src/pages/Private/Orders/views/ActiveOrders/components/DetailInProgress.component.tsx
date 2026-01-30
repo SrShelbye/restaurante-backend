@@ -48,15 +48,7 @@ interface Props {
   typeOrder: TypeOrder;
 }
 
-/**
- * Component to show the details of the order in progress
- * @author Santiago Quirumbay
- * @version 1.1 20/12/2023 Adds product options chip
- * @version 1.2 28/12/2023 Adds useUpdateOrderDetail hook
- * @version 1.3 01/03/2025 Fix: Buttons to increase quantity delivered
- * @version 1.4 20-01-2025 Adds order detail type icon
- * @version 1.5 03-01-2026 Enhanced UI, performance optimizations, removed commented code
- */
+/* */
 export const DetailInProgress: FC<Props> = ({ detail, orderId, typeOrder }) => {
   const theme = useTheme();
   const { mutate: update } = useUpdateOrderDetail();
@@ -143,23 +135,23 @@ export const DetailInProgress: FC<Props> = ({ detail, orderId, typeOrder }) => {
           onChange={handleChangeChecked}
         />
       </ListItemIcon>
-      {/* Quantity Badge */}
-      {/*   <Chip */}
-      {/*     label={detail.quantity} */}
-      {/*     size='small' */}
-      {/*     variant={!isCompleted ? 'filled' : 'outlined'} */}
-      {/*     color={!isCompleted ? 'primary' : 'default'} */}
-      {/*     sx={{ */}
-      {/*       fontWeight: 600, */}
-      {/*       fontSize: '0.875rem', */}
-      {/*       minWidth: 32, */}
-      {/*       height: 28, */}
-      {/*       opacity: isCompleted ? 0.5 : 1 */}
-      {/*     }} */}
-      {/*   /> */}
-      {/* </ListItemIcon> */}
+      {/* */}
+      {/* */}
+      {/* */}
+      {/* */}
+      {/* */}
+      {/* */}
+      {/* */}
+      {/* */}
+      {/* */}
+      {/* */}
+      {/* */}
+      {/* */}
+      {/* */}
+      {/* */}
+      {/* */}
 
-      {/* Product Info */}
+      {/* */}
       <ListItemText
         primary={
           <Stack direction='row' alignItems='center' spacing={1}>
@@ -174,30 +166,30 @@ export const DetailInProgress: FC<Props> = ({ detail, orderId, typeOrder }) => {
               {detail.quantity} x {detail.product.name}
             </Typography>
 
-            {/* Type Indicator */}
-            {/* {isDifferentType && ( */}
-            {/*   <Chip */}
-            {/*     label={ */}
-            {/*       detail.typeOrderDetail === TypeOrder.IN_PLACE */}
-            {/*         ? 'Para servir' */}
-            {/*         : 'Para llevar' */}
-            {/*     } */}
-            {/*     size='small' */}
-            {/*     variant='outlined' */}
-            {/*     sx={{ */}
-            {/*       height: 20, */}
-            {/*       fontSize: '0.7rem', */}
-            {/*       fontWeight: 500, */}
-            {/*       borderColor: alpha(theme.palette.divider, 0.5), */}
-            {/*       color: theme.palette.text.secondary */}
-            {/*     }} */}
-            {/*   /> */}
-            {/* )} */}
+            {/* */}
+            {/* */}
+            {/* */}
+            {/* */}
+            {/* */}
+            {/* */}
+            {/* */}
+            {/* */}
+            {/* */}
+            {/* */}
+            {/* */}
+            {/* */}
+            {/* */}
+            {/* */}
+            {/* */}
+            {/* */}
+            {/* */}
+            {/* */}
+            {/* */}
           </Stack>
         }
         secondary={
           <Stack spacing={0.5} mt={0.5}>
-            {/* Description */}
+            {/* */}
             {detail.description && (
               <Typography
                 variant='body2'
@@ -212,7 +204,7 @@ export const DetailInProgress: FC<Props> = ({ detail, orderId, typeOrder }) => {
               </Typography>
             )}
 
-            {/* Progress Bar */}
+            {/* */}
             {!isCompleted && (
               <Stack spacing={0.5} mt={0.5}>
                 <LinearProgressWrapper
@@ -235,11 +227,11 @@ export const DetailInProgress: FC<Props> = ({ detail, orderId, typeOrder }) => {
         }
       />
 
-      {/* Action Buttons */}
+      {/* */}
       <Stack direction='row' spacing={0.5} alignItems='center'>
         {!isCompleted && (
           <>
-            {/* Add One Button (only if quantity > 1) */}
+            {/* */}
             {detail.quantity > 1 && (
               <IconButton
                 size='small'
@@ -256,11 +248,11 @@ export const DetailInProgress: FC<Props> = ({ detail, orderId, typeOrder }) => {
               </IconButton>
             )}
 
-            {/* Complete Checkbox */}
+            {/* */}
           </>
         )}
 
-        {/* Edit Button */}
+        {/* */}
         <IconButton
           onClick={editDetail}
           size='small'

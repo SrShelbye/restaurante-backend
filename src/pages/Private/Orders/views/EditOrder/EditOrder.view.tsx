@@ -55,20 +55,7 @@ import { CreateBillModal } from './components/CreateBillModal.component';
 import { generateOrderPdf } from '../../helpers/pdf-orders';
 import { useRestaurantStore } from '@/pages/Private/Common/store/restaurantStore';
 
-/**
- * Componente for edit order
- *
- * @author Santiago Quirumbay
- * @version v1.1 22-12-2023 Adds bills
- *
- * @author Santiago Quirumbay
- * @version v1.2 18-02-2025 Fix: Validation to close order
- * @author Steven Rosales
- * @version v1.3 17/03/2025 Adds type order
- *
- * @author Steven Rosales
- * @version V1.0 29-03-2025 Add restaurant information to PDF
- */
+/* */
 export const EditOrder = () => {
   const navigate = useNavigate();
 

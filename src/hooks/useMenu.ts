@@ -7,10 +7,7 @@ import { loadMenu } from '../redux';
 import { useRestaurantStore } from '@/pages/Private/Common/store/restaurantStore';
 import { queryKeys } from '@/api/query-keys';
 
-/**
- * Hook to fetch the menu for the current restaurant
- * @version 2.0 - Migrated to React Query v5
- */
+/* */
 export const useMenu = () => {
   const dispatch = useDispatch();
   const { restaurant } = useRestaurantStore();

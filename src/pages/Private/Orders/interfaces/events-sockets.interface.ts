@@ -6,10 +6,7 @@ export enum EventsOnSocket {
   updateTable = 'update-table'
 }
 
-/**
- * Events emit socket
- * @version v1.1 22-12-2023 Adds bills's events
- */
+/* */
 export enum EventsEmitSocket {
   createOrder = 'create-order',
   updateOrder = 'update-order',

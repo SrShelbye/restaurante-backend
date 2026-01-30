@@ -10,10 +10,7 @@ interface WebSocketOptions<TData> {
   onError?: (resp: SocketResponse) => void;
 }
 
-/**
- * Hook to use websockets
- * @version v1.0 24-12-2023
- */
+/* */
 export function useEmitWebSocketsEvent<TData, TVariables>(
   eventMessage: string,
   options?: WebSocketOptions<SocketResponseData<TData>>

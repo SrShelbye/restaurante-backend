@@ -1,11 +1,6 @@
 import { useRef, useCallback, useState, useEffect } from 'react';
 
-/**
- * Custom hook to play notification sounds with user control
- * Uses custom audio file with fallback to Web Audio API
- * @version 1.0 2026-01-07 Initial version with Web Audio API
- * @version 1.1 2026-01-07 Added custom audio file support with fallback
- */
+/* */
 export const useNotificationSound = (
   volume: number = 0.5,
   soundUrl: string = '/static/sounds/bell-ding.wav'
@@ -109,9 +104,7 @@ export const useNotificationSound = (
     localStorage.setItem('notificationSoundMuted', String(isMuted));
   }, [isMuted]);
 
-  /**
-   * Plays notification sound (custom audio file or fallback to generated beep)
-   */
+  /* */
   const play = useCallback(async () => {
     if (isMuted) {
       return;
@@ -182,16 +175,12 @@ export const useNotificationSound = (
     }
   }, [isMuted, volume, useFallback]);
 
-  /**
-   * Toggle mute state
-   */
+  /* */
   const toggleMute = useCallback(() => {
     setIsMuted((prev) => !prev);
   }, []);
 
-  /**
-   * Set mute state explicitly
-   */
+  /* */
   const setMute = useCallback((mute: boolean) => {
     setIsMuted(mute);
   }, []);

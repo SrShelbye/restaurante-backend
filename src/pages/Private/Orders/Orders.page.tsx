@@ -9,12 +9,7 @@ import { ModalDeleteOrderDetail } from './components/modals/ModalDeleteOrderDeta
 
 import { ModalDeleteOrder } from './components/modals/ModalDeleteOrder.component';
 
-/**
- * Orders page
- * @version 1.1 28-12-2023 Adding the useOnOrderCreated, useOnOrderUpdated and useOnOrderDeleted hooks
- * @version 1.2 02-01-2024 Remove the useOnOrderCreated, useOnOrderUpdated and useOnOrderDeleted hooks
- *
- */
+/* */
 export const Orders = () => {
   return (
     <>

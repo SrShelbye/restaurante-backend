@@ -10,10 +10,7 @@ import { UpdateAccountDto } from '../dto/update-account.dto';
 import { CreateAccountDto } from '../dto/create-account.dto';
 import { Account } from '../../Common/models/account.model';
 
-/**
- * Hook to fetch all accounts
- * @version 2.0 - Migrated to React Query v5
- */
+/* */
 export const useAccounts = () => {
   const accountsQuery = useQuery({
     queryKey: ['accounts'],
@@ -25,10 +22,7 @@ export const useAccounts = () => {
   };
 };
 
-/**
- * Hook to fetch a single account by ID
- * @version 2.0 - Migrated to React Query v5
- */
+/* */
 export const useAccount = (id: number) => {
   const accountQuery = useQuery({
     queryKey: ['account', id],
@@ -40,10 +34,7 @@ export const useAccount = (id: number) => {
   };
 };
 
-/**
- * Hook to create a new account
- * @version 2.0 - Migrated to React Query v5
- */
+/* */
 export const useCreateAccount = () => {
   const { enqueueSnackbar } = useSnackbar();
   const queryClient = useQueryClient();
@@ -64,10 +55,7 @@ export const useCreateAccount = () => {
   });
 };
 
-/**
- * Hook to update an account
- * @version 2.0 - Migrated to React Query v5
- */
+/* */
 export const useUpdateAccount = (accountId: number) => {
   const { enqueueSnackbar } = useSnackbar();
   const queryClient = useQueryClient();

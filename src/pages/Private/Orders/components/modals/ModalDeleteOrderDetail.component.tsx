@@ -18,10 +18,7 @@ import { statusModalDeleteOrderDetail } from '../../services/orders.service';
 import { useDeleteOrderDetail } from '../../hooks/';
 import { LoadingButton } from '@mui/lab';
 
-/**
- * Component that shows a modal to delete an order detail
- * @version 1.1 28/12/2023 Adds useDeleteOrderDetail hook
- */
+/* */
 export const ModalDeleteOrderDetail = () => {
   const [detail, setDetail] = useState<IOrderDetail>();
 

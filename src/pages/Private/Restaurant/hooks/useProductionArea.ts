@@ -12,10 +12,7 @@ import { UpdateProductionAreaDto } from '../dto/update-production-area.dto';
 import { useSnackbar } from 'notistack';
 import { useProductionAreasStore } from '../../Common/store/production-areas-store';
 
-/**
- * Hook to fetch a single production area by ID
- * @version 2.0 - Migrated to React Query v5
- */
+/* */
 export const useProductionArea = (productionAreaId: number) => {
   return useQuery({
     queryKey: ['production-area', productionAreaId],
@@ -23,10 +20,7 @@ export const useProductionArea = (productionAreaId: number) => {
   });
 };
 
-/**
- * Hook to fetch all production areas
- * @version 2.0 - Migrated to React Query v5
- */
+/* */
 export const useProductionAreas = () => {
   const { loadProductionAreas, setProductionAreaActive } =
     useProductionAreasStore();
@@ -54,10 +48,7 @@ export const useProductionAreas = () => {
   return productionAreasQuery;
 };
 
-/**
- * Hook to create a new production area
- * @version 2.0 - Migrated to React Query v5
- */
+/* */
 export const useCreateProductionArea = () => {
   const { enqueueSnackbar } = useSnackbar();
   const { addProductionArea } = useProductionAreasStore();
@@ -76,10 +67,7 @@ export const useCreateProductionArea = () => {
   });
 };
 
-/**
- * Hook to update a production area
- * @version 2.0 - Migrated to React Query v5
- */
+/* */
 export const useUpdateProductionArea = () => {
   const { enqueueSnackbar } = useSnackbar();
   const { updateProductionArea: updateArea } = useProductionAreasStore();

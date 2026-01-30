@@ -19,10 +19,7 @@ import { useDateFilter } from '../../../../hooks/useDateFilter';
 import { Period } from '../../Common/dto/period.model';
 import { usePaginationAsync } from '../../../../hooks/usePaginationAsync';
 
-/**
- * Hook to fetch all cash registers with pagination and date filters
- * @version 2.0 - Migrated to React Query v5
- */
+/* */
 export const useAllCashRegister = () => {
   const dateFilter = useDateFilter(Period.MONTHLY);
   const pagination = usePaginationAsync();
@@ -60,10 +57,7 @@ export const useAllCashRegister = () => {
   };
 };
 
-/**
- * Hook to fetch a single cash register by term
- * @version 2.0 - Migrated to React Query v5
- */
+/* */
 export const useCashRegister = (term: string) => {
   const cashRegisterQuery = useQuery({
     queryKey: ['cashRegister', term],
@@ -81,10 +75,7 @@ export const useCashRegister = (term: string) => {
   };
 };
 
-/**
- * Hook to fetch the active cash register
- * @version 2.0 - Migrated to React Query v5
- */
+/* */
 export const useCashRegisterActive = () => {
   // const { setActiveCashRegister } = useCashRegisterStore((state) => state);
 
@@ -112,10 +103,7 @@ export const useCashRegisterActive = () => {
   };
 };
 
-/**
- * Hook to fetch all active cash registers
- * @version 2.0 - Migrated to React Query v5
- */
+/* */
 export const useAllActiveCashRegisters = () => {
   const { loadCashRegisters } = useCashRegisterStore((state) => state);
 
@@ -142,10 +130,7 @@ export const useAllActiveCashRegisters = () => {
   };
 };
 
-/**
- * Hook to create a new cash register
- * @version 2.0 - Migrated to React Query v5
- */
+/* */
 export const useCreateCashRegister = () => {
   const { enqueueSnackbar } = useSnackbar();
   const { addCashRegister } = useCashRegisterStore((state) => state);
@@ -168,10 +153,7 @@ export const useCreateCashRegister = () => {
   });
 };
 
-/**
- * Hook to update a cash register
- * @version 2.0 - Migrated to React Query v5
- */
+/* */
 export const useUpdateCashRegister = () => {
   const { enqueueSnackbar } = useSnackbar();
   const { setActiveCashRegister } = useCashRegisterStore((state) => state);

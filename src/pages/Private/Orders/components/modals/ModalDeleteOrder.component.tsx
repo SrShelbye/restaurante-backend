@@ -17,10 +17,7 @@ import { statusModalDeleteOrder } from '../../services/orders.service';
 import { useNavigate } from 'react-router-dom';
 import { useDeleteOrder } from '../../hooks';
 
-/**
- * Component that shows a modal to delete an order
- * @version 1.1 28/12/2023 Adds useDeleteOrder hook
- */
+/* */
 export const ModalDeleteOrder: FC = () => {
   const [order, setOrder] = useState<Order>();
 

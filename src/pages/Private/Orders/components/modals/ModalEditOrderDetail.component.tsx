@@ -35,11 +35,7 @@ interface Props {
   orderId: string;
 }
 
-/**
- * Modal to edit a product to the active order
- * @version 1.1 20/12/2023 Adds product options chip and NiceModal
- * @version 1.3 28/12/2023 Adds useUpdateOrderDetail hook
- */
+/* */
 export const ModalEditOrderDetail = NiceModal.create<Props>(
   ({ detail, orderId }) => {
     // const [detail, setDetail] = useState<IOrderDetail>();
@@ -108,13 +104,7 @@ export const ModalEditOrderDetail = NiceModal.create<Props>(
           <Box>
             <b>{detail?.product.name}</b>
 
-            {/* {detail?.productOption && (
-              <Chip
-                sx={{ ml: 1 }}
-                label={`${detail?.productOption?.name} `}
-                size="small"
-              />
-            )} */}
+            {/* */}
           </Box>
 
           <IconButton onClick={closeModal}>
@@ -124,33 +114,7 @@ export const ModalEditOrderDetail = NiceModal.create<Props>(
 
         <DialogContent>
           <Grid container spacing={1} alignItems='center'>
-            {/* <Grid item xs={12}>
-              {availableOptions.length > 0 && (
-                <Scrollbar autoHeight height="auto">
-                  <Box
-                    sx={{
-                      // overflowX: "auto",
-                      display: "flex",
-                      gap: 1,
-                    }}
-                  >
-                    {availableOptions.map((option) => (
-                      <Chip
-                        key={option.id}
-                        label={`${option?.name} ${formatMoney(option?.price)}`}
-                        variant="filled"
-                        onClick={() => setSelectedOption(option)}
-                        color={
-                          option.id === selectedOption?.id
-                            ? "primary"
-                            : "default"
-                        }
-                      />
-                    ))}
-                  </Box>
-                </Scrollbar>
-              )}
-            </Grid> */}
+            {/* */}
             <Grid item xs={12}>
               <Typography
                 variant='body2'

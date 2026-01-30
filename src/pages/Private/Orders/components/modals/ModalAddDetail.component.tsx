@@ -41,21 +41,7 @@ interface Props {
   detail: ICreateOrderDetail;
 }
 
-/**
- * Modal to add a product to the active order or to the new order
- * @author Santiago Quirumbay
- * @version 1.1 18/12/2023 Adds NiceModal and remove rxjs
- * @version 1.2 19/12/2023 Adds product options chip
- * @version 1.3 28/12/2023 Adds useCreateOrderDetail hook
- * @version 1.4 31/01/2025 Options hidden
- * @version 1.5 01/03/2025 Fix: Validation to add product to order and quantity delivered
- *
- * @author Steven Rosales
- * @version 1.6 17/03/2025 Adds type order
- *
- * @author Santiago Quirumbay
- * @version 1.7 20-03-2025 Default order detail type
- */
+/* */
 export const ModalAddDetail = NiceModal.create<Props>(({ detail }) => {
   const modal = useModal();
   console.log('detail', detail);
@@ -108,9 +94,7 @@ export const ModalAddDetail = NiceModal.create<Props>(({ detail }) => {
     setDescription('');
   };
 
-  /**
-   * @version 1.1 20/12/2023 Adds product option
-   */
+  /* */
   const addProductToOrder = (order: Order) => {
     const data: CreateOrderDetailDto = {
       orderId: order.id,
@@ -188,14 +172,7 @@ export const ModalAddDetail = NiceModal.create<Props>(({ detail }) => {
             </Box>
             <Typography variant='body1'>${detail?.product.price}</Typography>
 
-            {/* <List sx={{ p: 0 }} dense>
-              {detail?.product.options.map((option) => (
-                <ListItem key={option.id}>
-                  <Checkbox icon={icon} checkedIcon={checkedIcon} />
-                  <ListItemText primary={option.name} />
-                </ListItem>
-              ))}
-            </List> */}
+            {/* */}
             <FormControl>
               <RadioGroup
                 aria-labelledby='demo-radio-buttons-group-label'
@@ -220,31 +197,7 @@ export const ModalAddDetail = NiceModal.create<Props>(({ detail }) => {
               </RadioGroup>
             </FormControl>
 
-            {/* <Autocomplete
-                id="checkboxes-tags-demo"
-                options={product.options}
-                disableCloseOnSelect
-                getOptionLabel={(option) => option.name}
-                renderOption={(props, option, { selected }) => (
-                  <li {...props}>
-                    <Checkbox
-                      icon={icon}
-                      checkedIcon={checkedIcon}
-                      style={{ marginRight: 8 }}
-                      checked={selected}
-                    />
-                    {option.name}
-                  </li>
-                )}
-                renderInput={(params) => (
-                  <TextField
-                    {...params}
-                    label="Opciones"
-                    placeholder="Opción"
-                    variant="standard"
-                  />
-                )}
-              /> */}
+            {/* */}
 
             {detail?.product.description && (
               <Box sx={{ border: '1px solid #e0e0e0', p: 1, borderRadius: 1 }}>

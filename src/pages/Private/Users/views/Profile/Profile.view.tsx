@@ -43,7 +43,7 @@ export const Profile = () => {
               <Typography variant='h4' mt={5}>
                 {user?.person.firstName} {user?.person.lastName}
               </Typography>
-              {/* <Typography variant='subtitle1'>{user}</Typography> */}
+              {/* */}
             </CardContent>
           </Card>
         </Grid>
@@ -105,12 +105,7 @@ export const Profile = () => {
                     </ListItem>
                   </List>
 
-                  {/* <Typography variant='subtitle1'>Email</Typography>
-              <Typography variant='h5'>{user?.person.email}</Typography>
-              <Typography variant='subtitle1'>Teléfono</Typography>
-              <Typography variant='h5'>{user?.person.numPhone}</Typography>
-              <Typography variant='subtitle1'>Identificación</Typography>
-              <Typography variant='h5'>{user?.person.identification.type}: {user?.person.identification.num}</Typography> */}
+                  {/* */}
                 </CardContent>
               </Card>
             </Grid>

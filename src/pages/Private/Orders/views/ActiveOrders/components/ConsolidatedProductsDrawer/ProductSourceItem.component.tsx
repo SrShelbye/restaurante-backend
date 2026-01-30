@@ -9,13 +9,7 @@ interface Props {
   source: ProductSource;
 }
 
-/**
- * Component to display a single product source (order detail)
- * Shows where a specific product quantity comes from
- *
- * @author Santiago Quirumbay
- * @version 1.0 2026-01-03 Initial implementation
- */
+/* */
 export const ProductSourceItem: FC<Props> = ({ source }) => {
   const theme = useTheme();
 
@@ -36,14 +30,14 @@ export const ProductSourceItem: FC<Props> = ({ source }) => {
         transition: 'all 0.2s ease'
       }}
     >
-      {/* Quantity Badge */}
+      {/* */}
       <Typography variant='h6' fontWeight={700} sx={{ minWidth: 24 }}>
         {source.pending}
       </Typography>
 
-      {/* Source Information */}
+      {/* */}
       <Stack spacing={0.5} flexGrow={1}>
-        {/* Table/Order Type */}
+        {/* */}
         <Stack direction='row' spacing={1} alignItems='center'>
           {source.orderType === TypeOrder.IN_PLACE ? (
             <>
@@ -65,13 +59,13 @@ export const ProductSourceItem: FC<Props> = ({ source }) => {
             </>
           )}
 
-          {/* Order Number */}
+          {/* */}
           <Typography variant='caption' color='text.secondary'>
             · Pedido #{source.orderNum}
           </Typography>
         </Stack>
 
-        {/* Description (if exists) */}
+        {/* */}
         {source.description && (
           <Stack direction='row' spacing={0.5} alignItems='flex-start'>
             <Notes
@@ -94,7 +88,7 @@ export const ProductSourceItem: FC<Props> = ({ source }) => {
           </Stack>
         )}
 
-        {/* Delivery Progress (if partially delivered) */}
+        {/* */}
         {source.qtyDelivered > 0 && (
           <Typography variant='caption' color='success.main' fontWeight={500}>
             {source.qtyDelivered} de {source.quantity} entregados

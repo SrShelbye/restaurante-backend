@@ -43,11 +43,7 @@ interface Props {
   detail: IOrderDetail;
 }
 
-/**
- * @version 1.0 17-01-2024
- * @author Steven Rosales
- * @version 1.1 17/03/2025 Adds type order
- */
+/* */
 export const OrderDetailCard: FC<Props> = ({ detail }) => {
   const popupState = usePopupState({
     variant: 'popover',
@@ -203,28 +199,28 @@ export const OrderDetailCard: FC<Props> = ({ detail }) => {
             alignItems: 'center'
           }}
         >
-          {/* <Box display='flex'> */}
-          {/*   <CounterInput */}
-          {/*     value={quantity} */}
-          {/*     onChange={handleChangeQuantity} */}
-          {/*     min={0.5} */}
-          {/*   /> */}
-          {/*   {quantityChanged && ( */}
-          {/*     <IconButton */}
-          {/*       color='primary' */}
-          {/*       onClick={(e) => { */}
-          {/*         e.stopPropagation(); */}
-          {/*         updateQuantity(); */}
-          {/*       }} */}
-          {/*     > */}
-          {/*       <SaveOutlined /> */}
-          {/*     </IconButton> */}
-          {/*   )} */}
-          {/* </Box> */}
+          {/* */}
+          {/* */}
+          {/* */}
+          {/* */}
+          {/* */}
+          {/* */}
+          {/* */}
+          {/* */}
+          {/* */}
+          {/* */}
+          {/* */}
+          {/* */}
+          {/* */}
+          {/* */}
+          {/* */}
+          {/* */}
+          {/* */}
+          {/* */}
           <Box display='flex' justifyContent='end' textAlign='end' gap={1}>
-            {/* <Typography variant='subtitle1' component='div'> */}
-            {/*   {formatMoney(detail.price)} */}
-            {/* </Typography> */}
+            {/* */}
+            {/* */}
+            {/* */}
           </Box>
         </CardActions>
         <Box px={2}>

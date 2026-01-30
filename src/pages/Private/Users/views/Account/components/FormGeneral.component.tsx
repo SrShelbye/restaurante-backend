@@ -112,62 +112,60 @@ export const FormGeneral = () => {
                   />
                 </Grid>
 
-                {/* <Grid item xs={12} sm={6}> */}
-                {/*   <FormControl fullWidth> */}
-                {/*     <Controller */}
-                {/*       name='typeIdentification' */}
-                {/*       control={control} */}
-                {/*       render={({ field: { onChange, onBlur, value } }) => ( */}
-                {/*         <> */}
-                {/*           <InputLabel id='select-seccion'> */}
-                {/*             Tipo de identificación */}
-                {/*           </InputLabel> */}
-                {/*           <Select */}
-                {/*             labelId='select-seccion' */}
-                {/*             label='Tipo de identificación' */}
-                {/*             fullWidth */}
-                {/*             margin='dense' */}
-                {/*             value={value} */}
-                {/*             onChange={onChange} */}
-                {/*             onBlur={onBlur} */}
-                {/*           > */}
-                {/*             <MenuItem value={TypeIdentification.CEDULA}> */}
-                {/*               Cédula */}
-                {/*             </MenuItem> */}
-                {/*             <MenuItem value={TypeIdentification.RUC}> */}
-                {/*               RUC */}
-                {/*             </MenuItem> */}
-                {/*           </Select> */}
-                {/*         </> */}
-                {/*       )} */}
-                {/*     /> */}
-                {/*   </FormControl> */}
-                {/* </Grid> */}
-                {/**/}
-                {/* <Grid item xs={12} sm={6}> */}
-                {/*   <TextField */}
-                {/*     label='Número de identificación' */}
-                {/*     fullWidth */}
-                {/*     type='number' */}
-                {/*     {...register('numberIdentification', { */}
-                {/*       required: 'Este campo es requerido', */}
-                {/**/}
-                {/*       minLength: { */}
-                {/*         value: lengthIdentification, */}
-                {/*         message: `Minimo ${lengthIdentification} caracteres` */}
-                {/*       }, */}
-                {/*       maxLength: { */}
-                {/*         value: lengthIdentification, */}
-                {/*         message: `Máximo ${lengthIdentification} caracteres` */}
-                {/*       } */}
-                {/*     })} */}
-                {/*     helperText={ */}
-                {/*       <Typography color='red'> */}
-                {/*         {errors.numberIdentification?.message}{' '} */}
-                {/*       </Typography> */}
-                {/*     } */}
-                {/*   /> */}
-                {/* </Grid> */}
+                {/* */}
+                {/* */}
+                {/* */}
+                {/* */}
+                {/* */}
+                {/* */}
+                {/* */}
+                {/* */}
+                {/* */}
+                {/* */}
+                {/* */}
+                {/* */}
+                {/* */}
+                {/* */}
+                {/* */}
+                {/* */}
+                {/* */}
+                {/* */}
+                {/* */}
+                {/* */}
+                {/* */}
+                {/* */}
+                {/* */}
+                {/* */}
+                {/* */}
+                {/* */}
+                {/* */}
+                {/* */}
+                {/* */}
+                {/* */}
+                {/* */}
+                {/* */}
+                {/* */}
+                {/* */}
+                {/* */}
+                {/* */}
+                {/* */}
+                {/* */}
+                {/* */}
+                {/* */}
+                {/* */}
+                {/* */}
+                {/* */}
+                {/* */}
+                {/* */}
+                {/* */}
+                {/* */}
+                {/* */}
+                {/* */}
+                {/* */}
+                {/* */}
+                {/* */}
+                {/* */}
+                {/* */}
 
                 <Grid item xs={12} sm={6}>
                   <TextField

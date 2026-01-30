@@ -7,14 +7,7 @@ import { formatMoney } from '../../Common/helpers/format-money.helper';
 
 import { Restaurant } from '../../Common/models/restaurant.model';
 
-/**
- * Generates a PDF document for an order
- * @param order - The order to generate the PDF for
- * @param restaurant - The restaurant associated with the order
- * @returns A promise that resolves to the generated PDF document
- * @author Steven Rosales 
- * @version V1.0 29-03-2025 Add restaurant information to PDF
- */
+/* */
 
 export const generateOrderPdf = async (
   order: Order,

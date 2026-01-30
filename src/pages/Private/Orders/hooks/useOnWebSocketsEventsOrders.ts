@@ -16,11 +16,7 @@ import { useOnWebSocketsEvent, useNotificationSound } from '../../../../hooks';
 import { useQueryClient } from '@tanstack/react-query';
 import { queryKeys } from '@/api/query-keys';
 
-/**
- * Custom hook to listen to the event of updating an order with websockets
- * @version 1.0 28-12-2023
- * @version 1.1 2026-01-05 Added React Query cache invalidation to sync with Redux
- */
+/* */
 export const useOnOrderUpdated = () => {
   const dispatch = useDispatch();
   const { activeOrder } = useSelector(selectOrders);
@@ -56,12 +52,7 @@ export const useOnOrderUpdated = () => {
   );
 };
 
-/**
- * Custom hook to listen to the event of creating an order with websockets
- * @version 1.0 28-12-2023
- * @version 1.1 2026-01-05 Added React Query cache invalidation to sync with Redux
- * @version 1.2 2026-01-07 Added notification sound when new order is created
- */
+/* */
 export const useOnOrderCreated = () => {
   const dispatch = useDispatch();
   const { enqueueSnackbar } = useSnackbar();
@@ -92,11 +83,7 @@ export const useOnOrderCreated = () => {
   );
 };
 
-/**
- * Custom hook to listen to the event of deleting an order with websockets
- * @version 1.0 28-12-2023
- * @version 1.1 2026-01-05 Added React Query cache invalidation to sync with Redux
- */
+/* */
 export const useOnOrderDeleted = () => {
   const dispatch = useDispatch();
   const queryClient = useQueryClient();

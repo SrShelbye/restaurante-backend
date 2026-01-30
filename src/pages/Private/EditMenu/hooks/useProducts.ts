@@ -16,11 +16,7 @@ import { queryKeys } from '@/api/query-keys';
 
 export const useProducts = () => {};
 
-/**
- * Hook to get a product by id.
- * @author Santiago Quirumbay
- * @version 2.0 - Migrated to React Query v5
- */
+/* */
 export const useProduct = (id: string) => {
   const dispatch = useDispatch();
   const productQuery = useQuery<IProduct, unknown>({
@@ -39,10 +35,7 @@ export const useProduct = (id: string) => {
   return productQuery;
 };
 
-/**
- * Hook to create a new product
- * @version 2.0 - Migrated to React Query v5
- */
+/* */
 export const useCreateProduct = () => {
   const { enqueueSnackbar } = useSnackbar();
   const queryClient = useQueryClient();
@@ -59,10 +52,7 @@ export const useCreateProduct = () => {
   });
 };
 
-/**
- * Hook to update a product
- * @version 2.0 - Migrated to React Query v5
- */
+/* */
 export const useUpdateProduct = () => {
   const { enqueueSnackbar } = useSnackbar();
   const queryClient = useQueryClient();
@@ -82,10 +72,7 @@ export const useUpdateProduct = () => {
   });
 };
 
-/**
- * Hook to update a product image
- * @version 2.0 - Migrated to React Query v5
- */
+/* */
 export const useUpdateImageProduct = () => {
   const { enqueueSnackbar } = useSnackbar();
   const queryClient = useQueryClient();

@@ -13,10 +13,7 @@ import { loadTables, updateTable } from '../../../../redux';
 import { UpdateTableDto } from '../dto/table.dto';
 import { queryKeys } from '@/api/query-keys';
 
-/**
- * Hook to fetch all tables
- * @version 2.0 - Migrated to React Query v5
- */
+/* */
 export const useTables = () => {
   const dispatch = useDispatch();
   const tablesQuery = useQuery({
@@ -36,10 +33,7 @@ export const useTables = () => {
   };
 };
 
-/**
- * Hook to update a single table
- * @version 2.0 - Migrated to React Query v5
- */
+/* */
 export const useUpdateTable = () => {
   const { enqueueSnackbar } = useSnackbar();
   const dispatch = useDispatch();
@@ -61,10 +55,7 @@ export const useUpdateTable = () => {
   });
 };
 
-/**
- * Hook to update multiple tables at once
- * @version 2.0 - Migrated to React Query v5
- */
+/* */
 export const useUpdateManyTables = () => {
   const { enqueueSnackbar } = useSnackbar();
   const dispatch = useDispatch();

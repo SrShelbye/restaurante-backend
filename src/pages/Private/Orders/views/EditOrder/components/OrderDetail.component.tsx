@@ -51,9 +51,7 @@ export const LinearProgressWrapper = styled(LinearProgress)(
         }`
 );
 
-/**
- * @version 1.1 20/12/2023 Adds product option
- */
+/* */
 export const OrderDetail: FC<Props> = ({ detail }) => {
   const [quantity, setQuantity] = useState(detail.quantity);
 

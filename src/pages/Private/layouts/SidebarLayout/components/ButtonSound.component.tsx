@@ -2,11 +2,7 @@ import { VolumeUp, VolumeOff } from '@mui/icons-material';
 import { IconButton, Tooltip } from '@mui/material';
 import { useNotificationSound } from '../../../../../hooks';
 
-/**
- * Sound toggle button component for the header
- * Allows users to mute/unmute notification sounds
- * @version 1.0 2026-01-07
- */
+/* */
 export const ButtonSound = () => {
   const { isMuted, toggleMute } = useNotificationSound(0.5);
 

@@ -8,10 +8,7 @@ import { useDispatch } from 'react-redux';
 import { RegisterUserDto } from '../dto/register-user.dto';
 import { login, registerUser, renewToken } from '../services/auth.service';
 
-/**
- * Hook for user registration (signup)
- * @version 2.0 - Migrated to React Query v5
- */
+/* */
 export const useSignup = () => {
   const { setRestaurant } = useRestaurantStore((state) => state);
   const dispatch = useDispatch();
@@ -36,10 +33,7 @@ export const useSignup = () => {
   });
 };
 
-/**
- * Hook for user login
- * @version 2.0 - Migrated to React Query v5
- */
+/* */
 export const useLogin = () => {
   const { setRestaurant } = useRestaurantStore((state) => state);
   const dispatch = useDispatch();

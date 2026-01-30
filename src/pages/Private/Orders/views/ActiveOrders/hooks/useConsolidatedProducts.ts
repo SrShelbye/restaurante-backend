@@ -8,9 +8,7 @@ import {
   IOrderDetail
 } from '../../../../../../models';
 
-/**
- * Interface for a product source (where the product came from)
- */
+/* */
 export interface ProductSource {
   orderId: string;
   orderNum: number;
@@ -23,9 +21,7 @@ export interface ProductSource {
   detailId: string;
 }
 
-/**
- * Interface for a consolidated product entry
- */
+/* */
 export interface ConsolidatedProduct {
   productId: string;
   productName: string;
@@ -34,16 +30,7 @@ export interface ConsolidatedProduct {
   sources: ProductSource[];
 }
 
-/**
- * Custom hook to consolidate products across IN_PROGRESS orders
- * Groups products by product ID and description (if exists)
- * Only includes items that are not yet fully delivered
- *
- * @returns Array of consolidated products sorted by total pending quantity (desc)
- *
- * @author Santiago Quirumbay
- * @version 1.0 2026-01-03 Initial implementation
- */
+/* */
 export const useConsolidatedProducts = () => {
   const { orders } = useSelector(selectOrders);
 

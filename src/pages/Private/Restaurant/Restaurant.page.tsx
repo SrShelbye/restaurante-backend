@@ -46,7 +46,7 @@ const Restaurant = () => {
   return (
     <>
       <Container maxWidth='lg'>
-        {/* <TitlePage title='Configuración del restaurante' /> */}
+        {/* */}
         <Typography variant='h3' gutterBottom sx={{ mb: 3, mt: 3 }}>
           Configuración del restaurante
         </Typography>

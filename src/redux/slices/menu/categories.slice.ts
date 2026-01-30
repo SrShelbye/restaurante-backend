@@ -44,14 +44,8 @@ export const categoriesSlice = createSlice({
 });
 
 export const {
-  /* addCategory, 
-  deleteCategory, 
-  loadCategories, 
-  updateCategory, */
-  /* 
-  setActiveCategory,
-  resetActiveCategory,
-  resetCategories */
+  /* */
+  /* */
 } = categoriesSlice.actions;
 
 // export const selectCategories = (state: RootState) => state.categories;

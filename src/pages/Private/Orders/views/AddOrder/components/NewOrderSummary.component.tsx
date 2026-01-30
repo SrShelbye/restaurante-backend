@@ -38,10 +38,7 @@ interface Props {
   step: number;
 }
 
-/**
- * Component that shows the summary of the new order
- * @version 1.1 28/12/2023 Adds useCreateOrder hook
- */
+/* */
 export const NewOrderSummary: FC<Props> = () => {
   const { tables } = useSelector(selectTables);
   const {
@@ -133,12 +130,12 @@ export const NewOrderSummary: FC<Props> = () => {
                           </Select>
                         </FormControl>
                       )}
-                      {/* <Typography variant='h6' fontWeight='bold'> */}
-                      {/*   Mesa */}
-                      {/* </Typography> */}
-                      {/* <Typography variant='body1'> */}
-                      {/*   N° {table?.name || 'Sin mesa'} */}
-                      {/* </Typography> */}
+                      {/* */}
+                      {/* */}
+                      {/* */}
+                      {/* */}
+                      {/* */}
+                      {/* */}
                     </Box>
                   )}
                 </Box>
@@ -163,37 +160,36 @@ export const NewOrderSummary: FC<Props> = () => {
                   <Box sx={{ mt: 10 }}>
                     <OrderDetails />
                   </Box>
-                  {/* {orderType === TypeOrder.IN_PLACE && ( */}
-                  {/*   <Box> */}
-                  {/*     <InputLabel>Mesa</InputLabel> */}
-                  {/*     <Typography variant='h3' fontWeight='bold'> */}
-                  {/*       N° {table?.name || 'Sin mesa'} */}
-                  {/*     </Typography> */}
-                  {/*   </Box> */}
-                  {/* )} */}
-                  {/**/}
-                  {/* {orderType === TypeOrder.TAKE_AWAY && ( */}
-                  {/*   <Box> */}
-                  {/*     <InputLabel>Tipo de orden</InputLabel> */}
-                  {/*     <Typography variant='h3' fontWeight='bold'> */}
-                  {/*       {'Para llevar'} */}
-                  {/*     </Typography> */}
-                  {/*   </Box> */}
-                  {/* )} */}
+                  {/* */}
+                  {/* */}
+                  {/* */}
+                  {/* */}
+                  {/* */}
+                  {/* */}
+                  {/* */}
+                  {/* */}
+                  {/* */}
+                  {/* */}
+                  {/* */}
+                  {/* */}
+                  {/* */}
+                  {/* */}
+                  {/* */}
+                  {/* */}
 
-                  {/* <PeopleCounter /> */}
+                  {/* */}
 
-                  {/* <TextField */}
-                  {/*   id='descripcion-pedido' */}
-                  {/*   label='Notas' */}
-                  {/*   margin='dense' */}
-                  {/*   multiline */}
-                  {/*   rows={4} */}
-                  {/*   // defaultValue={detail?.description} */}
-                  {/*   fullWidth */}
-                  {/*   value={notes} */}
-                  {/*   onChange={handleChangeNotes} */}
-                  {/* /> */}
+                  {/* */}
+                  {/* */}
+                  {/* */}
+                  {/* */}
+                  {/* */}
+                  {/* */}
+                  {/* */}
+                  {/* */}
+                  {/* */}
+                  {/* */}
+                  {/* */}
                 </Stack>
               </Stack>
               <Divider />

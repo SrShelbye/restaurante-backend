@@ -17,10 +17,7 @@ import ThemeProvider from './theme/ThemeProvider';
 
 import { SuspenseLoader } from './components/ui/';
 
-/**
- * @author Santiago Quirumbay
- * @version 1.1 05-04-2025 Remove restaurant hook
- */
+/* */
 function App() {
   return (
     <ThemeProvider>

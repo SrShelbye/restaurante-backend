@@ -27,11 +27,7 @@ interface Props {
   order: Order;
 }
 
-/**
- * Enhanced Production Area Order Component
- * Displays order items grouped by production area with improved UI
- * @version 2.0 - Enhanced UI with progress indicators and better visual design
- */
+/* */
 export const ProductionAreaOrder = ({
   details,
   productionArea,
@@ -150,7 +146,7 @@ export const ProductionAreaOrder = ({
             alignItems='center'
             sx={{ width: '100%', pr: 2 }}
           >
-            {/* Icon */}
+            {/* */}
             <Box
               sx={{
                 bgcolor: alpha(areaColor, 0.15),
@@ -167,7 +163,7 @@ export const ProductionAreaOrder = ({
               <Restaurant fontSize='small' />
             </Box>
 
-            {/* Title and Stats */}
+            {/* */}
             <Stack spacing={0.5} flexGrow={1}>
               <Stack direction='row' spacing={1} alignItems='center'>
                 <Typography variant='subtitle1' fontWeight={600}>
@@ -186,7 +182,7 @@ export const ProductionAreaOrder = ({
                 />
               </Stack>
 
-              {/* Progress Bar */}
+              {/* */}
               <Stack direction='row' spacing={1} alignItems='center'>
                 <LinearProgress
                   variant='determinate'
@@ -219,7 +215,7 @@ export const ProductionAreaOrder = ({
         </AccordionSummary>
 
         <AccordionDetails sx={{ p: 0 }}>
-          {/* Tabs for Pending/Delivered */}
+          {/* */}
           {order.status !== OrderStatus.DELIVERED && (
             <Tabs
               value={expanded ? 1 : 0}
@@ -297,7 +293,7 @@ export const ProductionAreaOrder = ({
             </Tabs>
           )}
 
-          {/* Details List */}
+          {/* */}
           <Stack spacing={0} sx={{ bgcolor: alpha(areaColor, 0.01) }}>
             {detailsStatus.length > 0 ? (
               detailsStatus.map((detail, index) => (

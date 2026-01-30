@@ -5,10 +5,7 @@ import { InviteUserDto } from '../dto/invite-user.dto';
 import { InvitationService } from '../services/invitation.service';
 import { queryKeys } from '@/api/query-keys';
 
-/**
- * Hook to send user invitation
- * @version 2.0 - Migrated to React Query v5
- */
+/* */
 export const useSendInvitation = () => {
   const { enqueueSnackbar } = useSnackbar();
   const queryClient = useQueryClient();
