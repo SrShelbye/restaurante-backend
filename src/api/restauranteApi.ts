@@ -17,10 +17,11 @@ const restauranteApi = axios.create({
 
 restauranteApi.interceptors.request.use((config) => {
   const restaurant = useRestaurantStore.getState().restaurant;
+  const token = localStorage.getItem('token');
 
   config.headers = {
     ...config.headers,
-    Authorization: `Bearer ${localStorage.getItem('token') || ''}`
+    Authorization: token ? `Bearer ${token}` : undefined
   };
 
   if (restaurant) {
@@ -33,6 +34,12 @@ restauranteApi.interceptors.request.use((config) => {
 restauranteApi.interceptors.response.use(
   (resp) => resp,
   (err) => {
+    // Handle 401 Unauthorized - clear token and redirect to login
+    if (err.response?.status === 401) {
+      localStorage.removeItem('token');
+      localStorage.removeItem('token-init-date');
+      window.location.href = '/auth/login';
+    }
     return Promise.reject(err.response);
   }
 );
