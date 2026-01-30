@@ -30,8 +30,8 @@ import {
   Save as SaveIcon,
   Cancel as CancelIcon
 } from '@mui/icons-material';
-import { erpService } from '../../services/erp.service';
-import { Ingredient, Product } from '../../types/erp.types';
+import { erpService } from '../../../services/erp.service';
+import { Ingredient, Product } from '../../../types/erp.types';
 
 interface InventoryPageState {
   ingredients: Ingredient[];
@@ -56,7 +56,7 @@ const initialFormData = {
   supplier_id: ''
 };
 
-export const InventoryPage: React.FC = () => {
+export const Inventory: React.FC = () => {
   const [state, setState] = useState<InventoryPageState>({
     ingredients: [],
     loading: false,
@@ -65,7 +65,7 @@ export const InventoryPage: React.FC = () => {
     selectedIngredient: null,
     isDialogOpen: false,
     isEdit: false,
-    formData: initialFormData,
+    formData: {},
     productsUsingIngredient: [],
     isUsageDialogOpen: false
   });
@@ -201,7 +201,7 @@ export const InventoryPage: React.FC = () => {
   };
 
   return (
-    <Box sx={{ p: 3 }}>
+    <Box>
       <Box
         sx={{
           mb: 3,

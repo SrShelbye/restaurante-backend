@@ -26,13 +26,13 @@ import {
   Warning as WarningIcon,
   AttachMoney as MoneyIcon
 } from '@mui/icons-material';
-import { erpService } from '../../services/erp.service';
+import { erpService } from '../../../services/erp.service';
 import {
   Product,
   Ingredient,
   StockCalculationResult,
   ProductCostCalculation
-} from '../../types/erp.types';
+} from '../../../types/erp.types';
 
 interface DashboardPageState {
   inventoryValue: StockCalculationResult | null;
@@ -90,15 +90,30 @@ export const ErpDashboard: React.FC = () => {
       ]);
 
       // Analizar stock
+      const lowStockItems = ingredients.filter((i: Ingredient) => 
+        i.current_stock <= i.min_stock
+      ).length;
+      
+      const outOfStockItems = ingredients.filter((i: Ingredient) => 
+        i.current_stock === 0
+      ).length;
+      
+      const totalValue = ingredients.reduce((sum: number, p: Ingredient) => 
+        sum + (p.current_stock * p.unit_cost), 0
+      );
+      
       const stockAnalysis = {
         totalItems: ingredients.length,
-        lowStockItems: inventoryCalculation.low_stock_items.length,
-        outOfStockItems: ingredients.filter((i) => i.current_stock <= 0).length,
-        totalValue: inventoryCalculation.total_value
+        lowStockItems,
+        outOfStockItems,
+        totalValue
       };
 
       // Analizar productos
       const validProducts = products.filter((p) => p.total_cost > 0);
+      const avgMargin = products.length > 0 
+        ? products.reduce((sum: number, p: Product) => sum + p.margin_percentage, 0) / products.length 
+        : 0;
       const productAnalysis = {
         totalProducts: products.length,
         highMarginProducts: validProducts.filter(

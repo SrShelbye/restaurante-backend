@@ -43,7 +43,7 @@ import {
   ExpandMore as ExpandMoreIcon,
   Calculate as CalculateIcon
 } from '@mui/icons-material';
-import { erpService } from '../../services/erp.service';
+import { erpService } from '../../../services/erp.service';
 import {
   Product,
   Category,
@@ -51,7 +51,7 @@ import {
   Ingredient,
   RecipeIngredient,
   CreateProductRequest
-} from '../../types/erp.types';
+} from '../../../types/erp.types';
 
 interface ProductsPageState {
   products: Product[];
@@ -71,6 +71,8 @@ interface ProductsPageState {
   calculatedCost: number;
   calculatedMargin: number;
   calculatedPrice: number;
+  isIngredientDialogOpen: boolean;
+  availableIngredients: Ingredient[];
 }
 
 const initialFormData: Partial<CreateProductRequest> = {
@@ -83,7 +85,7 @@ const initialFormData: Partial<CreateProductRequest> = {
   recipe_ingredients: []
 };
 
-export const ProductsPage: React.FC = () => {
+export const Products: React.FC = () => {
   const [state, setState] = useState<ProductsPageState>({
     products: [],
     categories: [],
@@ -95,13 +97,15 @@ export const ProductsPage: React.FC = () => {
     selectedProduct: null,
     isDialogOpen: false,
     isEdit: false,
-    formData: initialFormData,
+    formData: {},
     recipeIngredients: [],
     ingredientSearch: '',
     searchedIngredients: [],
     calculatedCost: 0,
     calculatedMargin: 0,
-    calculatedPrice: 0
+    calculatedPrice: 0,
+    isIngredientDialogOpen: false,
+    availableIngredients: []
   });
 
   useEffect(() => {
@@ -274,23 +278,18 @@ export const ProductsPage: React.FC = () => {
       }
     }
 
-    const marginAmount =
-      state.formData.base_price *
-      ((state.formData.margin_percentage || 0) / 100);
-    const finalPrice = state.formData.base_price + marginAmount;
-
+    const basePrice = state.formData.base_price || 0;
+    const margin = state.formData.margin_percentage || 30;
+    const finalPrice = basePrice * (1 + margin / 100);
+    const actualMargin = finalPrice > 0 ? ((finalPrice - totalCost) / finalPrice) * 100 : 0;
+    
     setState((prev) => ({
       ...prev,
       calculatedCost: totalCost,
-      calculatedMargin: marginAmount,
-      calculatedPrice: finalPrice
+      calculatedPrice: finalPrice,
+      calculatedMargin: actualMargin
     }));
-  }, [
-    state.recipeIngredients,
-    state.formData.base_price,
-    state.formData.margin_percentage,
-    state.ingredients
-  ]);
+  }, [state.formData.base_price, state.formData.margin_percentage, state.recipeIngredients]);
 
   const addIngredientToRecipe = (ingredient: Ingredient) => {
     const existingIndex = state.recipeIngredients.findIndex(
