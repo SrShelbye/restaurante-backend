@@ -21,6 +21,7 @@ import {
 
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import { FC, useEffect, useRef, useState } from 'react';
+import { Link as RouterLink } from 'react-router-dom';
 import { useFetchAndLoad, useModal } from '../../../../hooks';
 import { sendRequestResetPassword } from '../services/reset-password.service';
 import { useSnackbar } from 'notistack';
@@ -203,7 +204,7 @@ const ForgotPassword = () => {
             >
               Enviar instrucciones
             </LoadingButton>
-            <Link href={'/' + PublicRoutes.LOGIN} variant='body2'>
+            <Link component={RouterLink} to={'/' + PublicRoutes.LOGIN} variant='body2'>
               Ir a login
             </Link>
           </Box>

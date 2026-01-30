@@ -15,7 +15,10 @@ import { RegisterUserDto } from '../dto/register-user.dto';
 import { useSignup } from '../hooks/useAuth';
 import { LoadingButton } from '@mui/lab';
 
+import { Link as RouterLink } from 'react-router-dom';
+
 import { getEnvVariables } from '@/helpers';
+import { PublicRoutes } from '@/models';
 
 const { VITE_APP_NAME } = getEnvVariables();
 
@@ -44,10 +47,12 @@ export const Signup = () => {
 
   const handleRegister = (form: RegisterUserDto) => {
     console.log('Registering user:', form);
-    mutateAsync(form).then(() => {
-      console.log('User registered successfully');
-      reset();
-    });
+    mutateAsync(form)
+      .then(() => {
+        console.log('User registered successfully');
+        reset();
+      })
+      .catch(() => undefined);
   };
 
   return (
@@ -210,7 +215,7 @@ export const Signup = () => {
             sx={{ my: 2 }}
           >
             <Typography>Already have an account?</Typography>
-            <Link href='login' variant='body2'>
+            <Link component={RouterLink} to={'/' + PublicRoutes.LOGIN} variant='body2'>
               Sign in
             </Link>
           </Stack>

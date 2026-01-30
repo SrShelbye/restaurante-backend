@@ -1,5 +1,6 @@
 import { FC, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
+import { Link as RouterLink } from 'react-router-dom';
 
 import {
   Container,
@@ -51,7 +52,7 @@ const Modal: FC<ModalProps> = ({ open, handleClose, status, msg }) => {
         <DialogActions>
           {status && (
             <Button>
-              <Link href={'/' + PublicRoutes.LOGIN} variant='body2'>
+              <Link component={RouterLink} to={'/' + PublicRoutes.LOGIN} variant='body2'>
                 Ir a Login
               </Link>
             </Button>
@@ -209,7 +210,7 @@ const ResetPassword = () => {
                   Enviar
                 </LoadingButton>
                 <Box sx={{ mt: 2, textAlign: 'center' }}>
-                  <Link href={'/' + PublicRoutes.LOGIN} variant='body2'>
+                  <Link component={RouterLink} to={'/' + PublicRoutes.LOGIN} variant='body2'>
                     Ir a login
                   </Link>
                 </Box>
