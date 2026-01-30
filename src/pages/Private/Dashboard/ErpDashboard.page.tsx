@@ -19,12 +19,14 @@ import {
   LinearProgress
 } from '@mui/material';
 import {
-  Inventory as InventoryIcon,
-  ShoppingCart as ShoppingCartIcon,
-  TrendingUp as TrendingUpIcon,
-  TrendingDown as TrendingDownIcon,
-  Warning as WarningIcon,
-  AttachMoney as MoneyIcon
+  AttachMoney,
+  Receipt,
+  ShoppingCart,
+  TrendingUp,
+  TrendingDown,
+  Warning,
+  CheckCircle,
+  Refresh
 } from '@mui/icons-material';
 import { erpService } from '../../../services/erp.service';
 import {
@@ -52,6 +54,14 @@ interface DashboardPageState {
     lowMarginProducts: number;
     averageMargin: number;
   };
+  salesAnalysis: {
+    totalSales: number;
+    totalRevenue: number;
+    totalOrders: number;
+    averageTicket: number;
+    paidOrders: number;
+    pendingOrders: number;
+  };
   stockAlerts: any[];
 }
 
@@ -73,6 +83,14 @@ export const ErpDashboard: React.FC = () => {
       highMarginProducts: 0,
       lowMarginProducts: 0,
       averageMargin: 0
+    },
+    salesAnalysis: {
+      totalSales: 0,
+      totalRevenue: 0,
+      totalOrders: 0,
+      averageTicket: 0,
+      paidOrders: 0,
+      pendingOrders: 0
     },
     stockAlerts: []
   });
@@ -117,13 +135,14 @@ export const ErpDashboard: React.FC = () => {
     setState((prev) => ({ ...prev, loading: true, error: null }));
 
     try {
-      const [inventoryCalculation, products, ingredients] = await Promise.all([
+      const [inventoryCalculation, products, ingredients, dailySales] = await Promise.all([
         erpService.getStockCalculation(),
         erpService.getProducts(),
-        erpService.getIngredients()
+        erpService.getIngredients(),
+        erpService.getDailySales()
       ]);
 
-      // Analizar stock
+      // Analizar stock - ✅ Valor total del inventario (stockActual * costo)
       const lowStockItems = ingredients.filter((i: Ingredient) => 
         i.current_stock <= i.min_stock
       ).length;
@@ -144,22 +163,34 @@ export const ErpDashboard: React.FC = () => {
       };
 
       // Analizar productos
-      const validProducts = products.filter((p) => p.total_cost > 0);
+      const validProducts = products.filter((p: Product) => p.total_cost > 0);
       const avgMargin = products.length > 0 
         ? products.reduce((sum: number, p: Product) => sum + p.margin_percentage, 0) / products.length 
         : 0;
       const productAnalysis = {
         totalProducts: products.length,
         highMarginProducts: validProducts.filter(
-          (p) => p.margin_percentage >= 35
+          (p: Product) => p.margin_percentage >= 35
         ).length,
-        lowMarginProducts: validProducts.filter((p) => p.margin_percentage < 20)
+        lowMarginProducts: validProducts.filter((p: Product) => p.margin_percentage < 20)
           .length,
         averageMargin:
           validProducts.length > 0
-            ? validProducts.reduce((sum, p) => sum + p.margin_percentage, 0) /
+            ? validProducts.reduce((sum: number, p: Product) => sum + p.margin_percentage, 0) /
               validProducts.length
             : 0
+      };
+
+      // ✅ Análisis de ventas diarias
+      const salesAnalysis = {
+        totalSales: dailySales.length,
+        totalRevenue: dailySales.reduce((sum: number, sale: any) => sum + sale.total, 0),
+        totalOrders: dailySales.length,
+        averageTicket: dailySales.length > 0 
+          ? dailySales.reduce((sum: number, sale: any) => sum + sale.total, 0) / dailySales.length 
+          : 0,
+        paidOrders: dailySales.filter((sale: any) => sale.paymentStatus === 'paid').length,
+        pendingOrders: dailySales.filter((sale: any) => sale.paymentStatus === 'pending').length
       };
 
       setState((prev) => ({
@@ -169,6 +200,7 @@ export const ErpDashboard: React.FC = () => {
         ingredients,
         stockAnalysis,
         productAnalysis,
+        salesAnalysis,
         loading: false
       }));
     } catch (error) {
@@ -329,6 +361,85 @@ export const ErpDashboard: React.FC = () => {
                     }
                   }
                 )}
+              </Box>
+            </CardContent>
+          </Card>
+        </Grid>
+
+        {/* ✅ Tarjetas de Ventas Diarias */}
+        <Grid item xs={12} sm={6} md={3}>
+          <Card>
+            <CardContent>
+              <Box
+                sx={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'space-between'
+                }}
+              >
+                <Box>
+                  <Typography color='textSecondary' gutterBottom>
+                    Ventas del Día
+                  </Typography>
+                  <Typography variant='h4' component='div'>
+                    {state.salesAnalysis?.totalSales || 0}
+                  </Typography>
+                </Box>
+                <AttachMoneyIcon
+                  sx={{ fontSize: 40, color: 'success.main' }}
+                />
+              </Box>
+            </CardContent>
+          </Card>
+        </Grid>
+
+        <Grid item xs={12} sm={6} md={3}>
+          <Card>
+            <CardContent>
+              <Box
+                sx={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'space-between'
+                }}
+              >
+                <Box>
+                  <Typography color='textSecondary' gutterBottom>
+                    Ingresos Totales
+                  </Typography>
+                  <Typography variant='h4' component='div'>
+                    {formatCurrency(state.salesAnalysis?.totalRevenue || 0)}
+                  </Typography>
+                </Box>
+                <TrendingUpIcon
+                  sx={{ fontSize: 40, color: 'info.main' }}
+                />
+              </Box>
+            </CardContent>
+          </Card>
+        </Grid>
+
+        <Grid item xs={12} sm={6} md={3}>
+          <Card>
+            <CardContent>
+              <Box
+                sx={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'space-between'
+                }}
+              >
+                <Box>
+                  <Typography color='textSecondary' gutterBottom>
+                    Ticket Promedio
+                  </Typography>
+                  <Typography variant='h4' component='div'>
+                    {formatCurrency(state.salesAnalysis?.averageTicket || 0)}
+                  </Typography>
+                </Box>
+                <ReceiptIcon
+                  sx={{ fontSize: 40, color: 'warning.main' }}
+                />
               </Box>
             </CardContent>
           </Card>

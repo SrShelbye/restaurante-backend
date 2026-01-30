@@ -245,25 +245,53 @@ export class SupabaseErpService {
     }
   }
 
-  async getProductsWithCostCalculation(): Promise<Product[]> {
+  async getDailySales(): Promise<any[]> {
     try {
-      const response = await fetch(`${import.meta.env.VITE_API_URL}/products/cost-analysis`, {
-        method: 'GET',
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/sales/daily`, {
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('token')}`
         }
       });
-
+      
       if (!response.ok) {
         const error = await response.json();
-        throw new Error(error.message || 'Error al obtener análisis de costos');
+        throw new Error(error.message || 'Error al obtener ventas diarias');
       }
-
+      
       const { data } = await response.json();
-      return data.analysis;
+      return data.sales || [];
     } catch (error) {
-      console.error('Error getting cost analysis:', error);
-      throw error;
+      console.error('Error getting daily sales:', error);
+      // Fallback: return empty array if API fails
+      return [];
+    }
+  }
+
+  async getStockAnalysis(): Promise<any> {
+    try {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/stock/analysis`, {
+        headers: {
+          'Authorization': `Bearer ${localStorage.getItem('token')}`
+        }
+      });
+      
+      if (!response.ok) {
+        const error = await response.json();
+        throw new Error(error.message || 'Error al obtener análisis de stock');
+      }
+      
+      const { data } = await response.json();
+      return data;
+    } catch (error) {
+      console.error('Error getting stock analysis:', error);
+      return {
+        totalIngredients: 0,
+        inStock: 0,
+        lowStock: 0,
+        outOfStock: 0,
+        totalValue: 0,
+        categoryBreakdown: {}
+      };
     }
   }
 
