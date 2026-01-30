@@ -21,5 +21,7 @@ export const PrivateRoutes = {
   BALANCE: 'balance',
   INCOMES: 'incomes',
   EXPENSES: 'expenses',
-  SUPPLIERS: 'suppliers'
+  SUPPLIERS: 'suppliers',
+  INVENTORY: 'inventory',
+  PRODUCTS: 'products'
 };

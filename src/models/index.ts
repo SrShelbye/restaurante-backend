@@ -6,3 +6,4 @@ export * from './orders.model';
 export * from './routes.model';
 export * from './table.model';
 export * from './user.model';
+export * from '../types/erp.types';

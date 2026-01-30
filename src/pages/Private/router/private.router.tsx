@@ -13,6 +13,9 @@ import { BalanceRouter } from '../Balance/router/Balance.router';
 import { SuppliersRouter } from '../Suppliers/router/Suppliers.router';
 import { InvoiceRouter } from '../Invoices/router/Invoice.router';
 import { RestaurantRouter } from '../Restaurant/router';
+import { InventoryRouter } from '../Inventory/router/Inventory.router';
+import { ProductsRouter } from '../Products/router/Products.router';
+import { DashboardRouter } from '../Dashboard/router/Dashboard.router';
 import { UnauthorizedPage } from '../../Status/Unauthorized.page';
 import Auth from '../components/Auth.component';
 import { ValidRoles } from '../Common/models/valid-roles.model';
@@ -25,7 +28,12 @@ export const PrivateRouter: RouteObject[] = [
     path: '/',
     element: <SidebarLayout />,
     children: [
-      // MenuRouter,
+      // ERP Routes
+      DashboardRouter,
+      InventoryRouter,
+      ProductsRouter,
+      
+      // Existing Routes
       OrderRouter,
       InvoiceRouter,
       MenuEditRouter,
@@ -49,6 +57,9 @@ export const PrivateRouter: RouteObject[] = [
         children: [BalanceRouter]
       },
       SuppliersRouter,
+      DashboardRouter,
+      InventoryRouter,
+      ProductsRouter,
 
       {
         path: 'unauthorized',

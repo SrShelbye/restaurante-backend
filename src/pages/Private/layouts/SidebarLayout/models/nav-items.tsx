@@ -13,15 +13,27 @@ import {
   MenuBook,
   ReceiptLong,
   SoupKitchen,
-  Storefront
+  Storefront,
+  Inventory,
+  ShoppingCart
 } from '@mui/icons-material';
 import { NavItem } from '../../interfaces';
 
 export const navItemsAdmin: NavItem[] = [
   {
-    title: 'Dashboard',
+    title: 'Dashboard ERP',
     icon: <DashboardOutlinedIcon />,
-    to: '/reports'
+    to: '/dashboard'
+  },
+  {
+    title: 'Inventario',
+    icon: <Inventory />,
+    to: '/inventory'
+  },
+  {
+    title: 'Productos',
+    icon: <ShoppingCart />,
+    to: '/products'
   },
   {
     title: 'Balance',
@@ -54,6 +66,23 @@ export const navItemsOrders: NavItem[] = [
 ];
 
 export const navItemsManagement: NavItem[] = [
+  {
+    title: 'ERP Gastronómico',
+    icon: <Storefront />,
+    to: '/products',
+    subItems: [
+      {
+        title: 'Productos',
+        to: '/products',
+        icon: <ShoppingCart sx={{ fontSize: 8 }} />
+      },
+      {
+        title: 'Inventario',
+        to: '/inventory',
+        icon: <Inventory sx={{ fontSize: 8 }} />
+      }
+    ]
+  },
   {
     title: 'Menú del restaurante',
     icon: <MenuBook />,
