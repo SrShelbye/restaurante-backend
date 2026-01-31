@@ -19,13 +19,12 @@ restauranteApi.interceptors.request.use((config) => {
   const restaurant = useRestaurantStore.getState().restaurant;
   const token = localStorage.getItem('token');
 
-  config.headers = {
-    ...config.headers,
-    Authorization: token ? `Bearer ${token}` : undefined
-  };
-
-  if (restaurant) {
-    config.headers['x-restaurant-id'] = restaurant.id;
+  if (config.headers) {
+    config.headers.Authorization = token ? `Bearer ${token}` : '';
+    
+    if (restaurant) {
+      config.headers['x-restaurant-id'] = restaurant.id;
+    }
   }
 
   return config;

@@ -116,14 +116,14 @@ export class SupabaseErpService {
           name: recipe.name,
           type: 'recipe',
           quantity: recipe.recipe_ingredients[0]?.gross_quantity || 0,
-          unit: recipe.recipe_ingredients[0]?.ingredients?.unit || 'unidad'
+          unit: (recipe.recipe_ingredients[0]?.ingredients as any)?.unit || 'unidad'
         })) || [],
         usedInSemifinished: semifinished?.map(product => ({
           id: product.id,
           name: product.name,
           type: 'semifinished',
           quantity: product.recipe_ingredients[0]?.gross_quantity || 0,
-          unit: product.recipe_ingredients[0]?.ingredients?.unit || 'unidad'
+          unit: (product.recipe_ingredients[0]?.ingredients as any)?.unit || 'unidad'
         })) || []
       };
 
@@ -464,7 +464,7 @@ export class SupabaseErpService {
     };
   }
 
-  async getIngredientUsage(ingredientId: string): Promise<Product[]> {
+  async getIngredientUsageByProduct(ingredientId: string): Promise<Product[]> {
     const { data, error } = await supabase
       .from('recipe_ingredients')
       .select('product:products(*)')
