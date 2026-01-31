@@ -1,5 +1,12 @@
 const express = require('express');
-const { authenticateToken } = require('./auth');
+const { authenticateToken } = require('../middleware/authMiddleware');
+
+console.log('Loading reports.routes.js');
+console.log('authenticateToken type:', typeof authenticateToken);
+if (typeof authenticateToken !== 'function') {
+  console.error('CRITICAL: authenticateToken is not a function in reports.routes.js!');
+  console.error('Value:', authenticateToken);
+}
 
 const router = express.Router();
 

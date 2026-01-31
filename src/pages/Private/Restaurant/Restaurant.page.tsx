@@ -9,7 +9,7 @@ import {
   TextField,
   Typography
 } from '@mui/material';
-import { useRestaurantStore } from '../Common/store/restaurantStore';
+import { useAppSelector } from '@/hooks/useRedux'; // REFACTORED
 import { useForm } from 'react-hook-form';
 import { UpdateRestaurantDto } from '../Reports/dto/update-restaurant.dto';
 import { useUpdateRestaurant } from './hooks/useRestaurant';
@@ -18,7 +18,7 @@ import { FormRestaurantLogo } from './components/FormRestaurantLogo.component';
 import { ProductionAreasList } from './components/ProductionAreasList.component';
 
 const Restaurant = () => {
-  const { restaurant } = useRestaurantStore((state) => state);
+  const restaurant = useAppSelector((state) => state.restaurant.restaurant);
 
   const updateRestaurantMutation = useUpdateRestaurant();
 

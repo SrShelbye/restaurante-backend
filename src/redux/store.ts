@@ -6,8 +6,9 @@ import { menuSlice } from './slices/menu';
 import { detailsSlice, ordersSlice } from './slices/orders';
 import { tablesSlice } from './slices/tables';
 import { userSlice } from './slices/users';
+import { restaurantSlice } from './slices/restaurant';
 
-export interface IAppStore {}
+export interface IAppStore { }
 
 export const store = configureStore({
   reducer: {
@@ -17,7 +18,8 @@ export const store = configureStore({
     clients: clientsSlice.reducer,
     tables: tablesSlice.reducer,
     menu: menuSlice.reducer,
-    users: userSlice.reducer
+    users: userSlice.reducer,
+    restaurant: restaurantSlice.reducer
   }
 });
 

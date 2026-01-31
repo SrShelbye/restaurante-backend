@@ -7,8 +7,8 @@ import {
   updateRestaurant
 } from '../../Reports/services/rules.service';
 import { UpdateRestaurantDto } from '../../Reports/dto/update-restaurant.dto';
-import { useRestaurantStore } from '../../Common/store/restaurantStore';
 import { Restaurant } from '../../Common/models/restaurant.model';
+import { setRestaurant } from '@/redux/slices/restaurant'; // IMPORT ACTION
 import {
   UpdateRestaurantLogoDto,
   updateRestaurantLogo,
@@ -24,17 +24,16 @@ import { LoginResponse } from '@/models/dto/auth.dto';
 /* */
 export const switchRestaurantMutation = () => {
   const { enqueueSnackbar } = useSnackbar();
-  const { setRestaurant } = useRestaurantStore((state) => state);
   const dispatch = useDispatch();
   return useMutation<LoginResponseDto, unknown, string>({
     mutationFn: (restaurantId: string) =>
       RestaurantService.switchRestaurant(restaurantId),
     onSuccess: (data: LoginResponseDto) => {
-      setRestaurant(data.currentRestaurant);
+      dispatch(setRestaurant(data.currentRestaurant));
       dispatch(onLogin(data.user));
       localStorage.setItem('token', data.token);
       localStorage.setItem('token-init-date', String(new Date().getTime()));
-      setRestaurant(data.currentRestaurant);
+      dispatch(setRestaurant(data.currentRestaurant));
       window.location.reload();
     },
     onError: () => {
@@ -48,20 +47,19 @@ export const switchRestaurantMutation = () => {
 /* */
 export const useRestaurant = () => {
   const { enqueueSnackbar } = useSnackbar();
-
-  const { setRestaurant } = useRestaurantStore();
+  const dispatch = useDispatch();
 
   const restaurantQuery = useQuery<LoginResponse, unknown>({
     queryKey: ['restaurant'],
     queryFn: () => getRestaurant('1')
   });
 
-  // Handle side effects - update Zustand store on successful fetch
+  // Handle side effects - update Redux store on successful fetch
   useEffect(() => {
     if (restaurantQuery.isSuccess && restaurantQuery.data?.currentRestaurant) {
-      setRestaurant(restaurantQuery.data.currentRestaurant);
+      dispatch(setRestaurant(restaurantQuery.data.currentRestaurant));
     }
-  }, [restaurantQuery.data, restaurantQuery.isSuccess, setRestaurant]);
+  }, [restaurantQuery.data, restaurantQuery.isSuccess, dispatch]);
 
   useEffect(() => {
     if (restaurantQuery.isError) {
@@ -77,13 +75,12 @@ export const useRestaurant = () => {
 /* */
 export const useUpdateRestaurant = () => {
   const { enqueueSnackbar } = useSnackbar();
-
-  const { setRestaurant } = useRestaurantStore((state) => state);
+  const dispatch = useDispatch();
 
   return useMutation<Restaurant, unknown, UpdateRestaurantDto>({
     mutationFn: (data: UpdateRestaurantDto) => updateRestaurant('1', data),
     onSuccess: (data: Restaurant) => {
-      setRestaurant(data);
+      dispatch(setRestaurant(data));
       enqueueSnackbar('Restaurante actualizado', { variant: 'success' });
     },
     onError: (error: unknown) => {
@@ -98,7 +95,6 @@ export const useUpdateRestaurant = () => {
 /* */
 export const useCreateRestaurant = () => {
   const { enqueueSnackbar } = useSnackbar();
-  const { setRestaurant } = useRestaurantStore((state) => state);
   const dispatch = useDispatch();
   const switchRestaurant = switchRestaurantMutation();
 

@@ -16,8 +16,8 @@ const Private = lazy(() => import('../pages/Private/Private'));
 /* */
 export const AppRouter = () => {
   const { status } = useAppSelector(selectAuth);
-  const { restaurant } = useRestaurantStore((state) => state);
-  
+  const restaurant = useAppSelector((state) => state.restaurant.restaurant);
+
   useRenewToken();
 
   if (status === 'checking') {

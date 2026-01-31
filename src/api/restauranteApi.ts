@@ -1,4 +1,4 @@
-import { useRestaurantStore } from '@/pages/Private/Common/store/restaurantStore';
+import { store } from '@/redux/store';
 import axios from 'axios';
 
 import { getEnvVariables } from '../helpers';
@@ -16,12 +16,12 @@ const restauranteApi = axios.create({
 // Interceptores
 
 restauranteApi.interceptors.request.use((config) => {
-  const restaurant = useRestaurantStore.getState().restaurant;
+  const restaurant = store.getState().restaurant.restaurant;
   const token = localStorage.getItem('token');
 
   if (config.headers) {
     config.headers.Authorization = token ? `Bearer ${token}` : '';
-    
+
     if (restaurant) {
       config.headers['x-restaurant-id'] = restaurant.id;
     }

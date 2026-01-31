@@ -9,12 +9,12 @@ require('dotenv').config({ path: path.join(__dirname, '../.env') });
 // Importar rutas desde la estructura correcta
 const authRoutes = require('../routes/auth.routes');
 const menuRoutes = require('../routes/menu.routes');
-const ordersRoutes = require('../routes/orders');
-const tablesRoutes = require('../routes/tables');
-const clientsRoutes = require('../routes/clients');
-const productionAreasRoutes = require('../routes/production-areas');
-const cashRegisterRoutes = require('../routes/cash-register');
-const erpRoutes = require('../routes/erp');
+const ordersRoutes = require('../routes/orders.routes');
+const tablesRoutes = require('../routes/tables.routes');
+const clientsRoutes = require('../routes/clients.routes');
+const productionAreasRoutes = require('../routes/production-areas.routes');
+const cashRegisterRoutes = require('../routes/cash-register.routes');
+const erpRoutes = require('../routes/erp.routes');
 const reportsRoutes = require('../routes/reports.routes');
 const balanceRoutes = require('../routes/balance.routes');
 const usersRoutes = require('../routes/users.routes');

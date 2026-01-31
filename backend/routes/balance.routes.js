@@ -1,6 +1,7 @@
 const express = require('express');
 const supabase = require('../config/database');
-const { authenticateToken } = require('./auth');
+const { authenticateToken } = require('../middleware/authMiddleware');
+if (typeof authenticateToken !== 'function') console.error('CRITICAL: authenticateToken invalid in balance.routes.js');
 
 const router = express.Router();
 

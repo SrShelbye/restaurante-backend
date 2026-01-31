@@ -1,9 +1,10 @@
 const express = require('express');
-const { register, login, renew, logout, authenticateToken } = require('./auth');
+const { register, login, renew, logout } = require('../controllers/authController');
+const { authenticateToken } = require('../middleware/authMiddleware');
 
 const router = express.Router();
 
-// Registro - ENDPOINT QUE FALTABA
+// Registro
 router.post('/register', register);
 
 // Login
