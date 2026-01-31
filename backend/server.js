@@ -8,13 +8,17 @@ require('dotenv').config();
 
 // Importar rutas
 const authRoutes = require('./routes/auth.routes');
-const menuRoutes = require('./routes/menu');
+const menuRoutes = require('./routes/menu.routes');
 const ordersRoutes = require('./routes/orders');
 const tablesRoutes = require('./routes/tables');
 const clientsRoutes = require('./routes/clients');
 const productionAreasRoutes = require('./routes/production-areas');
 const cashRegisterRoutes = require('./routes/cash-register');
 const erpRoutes = require('./routes/erp');
+const reportsRoutes = require('./routes/reports.routes');
+const balanceRoutes = require('./routes/balance.routes');
+const usersRoutes = require('./routes/users.routes');
+const invoicesRoutes = require('./routes/invoices.routes');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -70,6 +74,10 @@ app.use('/api/clients', clientsRoutes);
 app.use('/api/production-areas', productionAreasRoutes);
 app.use('/api/cash-register', cashRegisterRoutes);
 app.use('/api/erp', erpRoutes);
+app.use('/api/reports', reportsRoutes);
+app.use('/api/financial', balanceRoutes);
+app.use('/api/users', usersRoutes);
+app.use('/api/invoices', invoicesRoutes);
 
 // Manejo de errores 404
 app.use((req, res) => {

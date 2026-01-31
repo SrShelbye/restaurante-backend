@@ -6,6 +6,7 @@ export * from './EditOrder/EditOrder.view';
 export * from './Menu/Menu.view';
 export * from './Menu/MenuAddProductsOrder.component';
 export * from './Menu/components';
+export { ProductionAreaOrders } from './ProductionAreaOrders/ProductionAreaOrders.view';
 export * from './OrderReceipt/OrderReceipt.view';
 export * from './OrderReceipt/pdf/PdfReceiptOrder.component';
 export * from './OrdersDashboard/OrdersDashboard.view';

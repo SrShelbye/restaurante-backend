@@ -6,7 +6,8 @@ import {
   AddOrder,
   ReceiptOrder,
   ActiveOrders,
-  OrdersDashboard
+  OrdersDashboard,
+  ProductionAreaOrders
 } from '../views';
 import { PrivateRoutes } from '../../../../models/routes.model';
 
@@ -26,6 +27,10 @@ export const OrderRouter: RouteObject = {
     {
       path: 'actives',
       element: <ActiveOrders />
+    },
+    {
+      path: 'production-area',
+      element: <ProductionAreaOrders />
     },
     {
       path: 'list',
@@ -48,7 +53,7 @@ export const OrderRouter: RouteObject = {
       element: <AddOrder />
     },
     {
-      path: 'add/menu',
+      path: 'menu',
       element: <Menu />
     }
   ]
